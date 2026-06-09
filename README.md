@@ -12,7 +12,7 @@
   <h2 align="center">IA4Noobs</h2>
 
   <h1 align="center">
-    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg" alt="Logo de IA" width="120">
+    <img src="https://api.iconify.design/mdi/brain.svg?color=%237c3aed&width=120&height=120" alt="Logo de IA" width="120">
   </h1>
 
   <p align="center">

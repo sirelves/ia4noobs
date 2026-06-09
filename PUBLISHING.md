@@ -29,7 +29,7 @@ Use este bloco como base para adicionar o guia em `.github/config.json`.
 {
   "name": "IA4noobs",
   "tags": ["IA", "LLM", "Prompt Engineering", "RAG", "Agents", "MCP"],
-  "image": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/openai/openai-original.svg",
+  "image": "https://api.iconify.design/mdi/brain.svg?color=%237c3aed&width=120&height=120",
   "description": "Aprenda Inteligência Artificial do zero: fundamentos, prompt engineering, embeddings, RAG, agents, MCP e como levar aplicações de IA para produção.",
   "category": "Diversos",
   "author": {
