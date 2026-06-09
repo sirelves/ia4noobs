@@ -1,0 +1,3 @@
+# SDK oficial do Model Context Protocol (MCP) para Python.
+# Ja inclui o FastMCP usado no server.py.
+mcp
