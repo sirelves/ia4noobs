@@ -6,14 +6,15 @@ Este guia existe para tirar a IA da caixa-preta. A ideia não é te transformar 
 
 ## O que você vai aprender
 
-O guia é dividido em 6 módulos, do mais básico ao mais aplicado:
+O guia é dividido em 7 módulos, do mais básico ao mais aplicado:
 
-1. **Fundamentos** — o que é IA, IA generativa, como o ChatGPT funciona, tokens e janela de contexto.
-2. **Conversando com IA** — prompt engineering, como fazer boas perguntas e os erros mais comuns.
+1. **Fundamentos** — o que é IA, IA generativa, multimodalidade, como o ChatGPT funciona, tokens, janela de contexto e como escolher um modelo.
+2. **Conversando com IA** — prompt engineering, boas perguntas, técnicas como few-shot e chain-of-thought, e os erros mais comuns.
 3. **Conhecimento** — embeddings, RAG e bancos vetoriais (como dar "memória" e fontes para a IA).
 4. **Agents** — o que são agents, tools, skills e sistemas com vários agentes.
 5. **MCP** — o Model Context Protocol, que conecta IAs a ferramentas externas.
-6. **Produção** — como criar aplicações de verdade, segurança, avaliação de respostas, custos e escala.
+6. **Produção** — rodar modelos localmente, criar aplicações de verdade, segurança, avaliação de respostas, custos e escala.
+7. **Prática** — um projeto final de ponta a ponta, juntando tudo.
 
 ## Como aproveitar melhor
 
@@ -43,7 +44,7 @@ Entender isso desde o começo é o que separa quem **usa IA bem** de quem confia
 ## Pré-requisitos
 
 - Para os **módulos 1 a 3**: nenhum conhecimento técnico é necessário. Basta curiosidade.
-- Para os **módulos 4 a 6**: ajuda ter noções básicas de programação, porque entramos em código e arquitetura.
+- Para os **módulos 4 a 7**: ajuda ter noções básicas de programação, porque entramos em código e arquitetura.
 
 Não tem essa base ainda? Sem problema. Comece pelos fundamentos e volte aos módulos avançados quando se sentir confortável. Inclusive, o [índice do 4noobs](https://github.com/he4rt/4noobs) tem guias de várias linguagens para te ajudar.
 

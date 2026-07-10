@@ -58,50 +58,58 @@ Antes de começar, é útil ter:
 
 ## ROADMAP
 
-O guia é dividido em 6 módulos. Você pode ler na ordem ou pular para o que mais interessa.
+O guia é dividido em 7 módulos. Você pode ler na ordem ou pular para o que mais interessa.
 
 ### Módulo 1 — Fundamentos
 
 - [00 - Introdução](content/00-introducao.md)
 - [01 - O que é Inteligência Artificial](content/01-o-que-e-inteligencia-artificial.md)
 - [02 - O que é IA Generativa](content/02-o-que-e-ia-generativa.md)
-- [03 - Como o ChatGPT funciona](content/03-como-o-chatgpt-funciona.md)
-- [04 - O que são Tokens](content/04-o-que-sao-tokens.md)
-- [05 - O que é Janela de Contexto](content/05-o-que-e-janela-de-contexto.md)
+- [03 - IA Multimodal](content/03-ia-multimodal.md)
+- [04 - Como o ChatGPT funciona](content/04-como-o-chatgpt-funciona.md)
+- [05 - O que são Tokens](content/05-o-que-sao-tokens.md)
+- [06 - O que é Janela de Contexto](content/06-o-que-e-janela-de-contexto.md)
+- [07 - Escolhendo o modelo certo](content/07-escolhendo-o-modelo-certo.md)
 
 ### Módulo 2 — Conversando com IA
 
-- [06 - O que é Prompt Engineering](content/06-o-que-e-prompt-engineering.md)
-- [07 - Como fazer perguntas melhores](content/07-como-fazer-perguntas-melhores.md)
-- [08 - Como estruturar respostas](content/08-como-estruturar-respostas.md)
-- [09 - Principais erros ao usar IA](content/09-principais-erros-ao-usar-ia.md)
+- [08 - O que é Prompt Engineering](content/08-o-que-e-prompt-engineering.md)
+- [09 - Como fazer perguntas melhores](content/09-como-fazer-perguntas-melhores.md)
+- [10 - Few-shot e Chain-of-Thought](content/10-few-shot-e-chain-of-thought.md)
+- [11 - Como estruturar respostas](content/11-como-estruturar-respostas.md)
+- [12 - Principais erros ao usar IA](content/12-principais-erros-ao-usar-ia.md)
 
 ### Módulo 3 — Conhecimento
 
-- [10 - O que são Embeddings](content/10-o-que-sao-embeddings.md)
-- [11 - O que é RAG](content/11-o-que-e-rag.md)
-- [12 - O que é Banco Vetorial](content/12-o-que-e-banco-vetorial.md)
+- [13 - O que são Embeddings](content/13-o-que-sao-embeddings.md)
+- [14 - O que é RAG](content/14-o-que-e-rag.md)
+- [15 - O que é Banco Vetorial](content/15-o-que-e-banco-vetorial.md)
 
 ### Módulo 4 — Agents
 
-- [13 - O que é um Agent](content/13-o-que-e-um-agent.md)
-- [14 - O que é uma Tool](content/14-o-que-e-uma-tool.md)
-- [15 - O que são Skills](content/15-o-que-sao-skills.md)
-- [16 - Arquitetura básica de Agents](content/16-arquitetura-basica-de-agents.md)
-- [17 - Multi-Agent Systems](content/17-multi-agent-systems.md)
+- [16 - O que é um Agent](content/16-o-que-e-um-agent.md)
+- [17 - O que é uma Tool](content/17-o-que-e-uma-tool.md)
+- [18 - O que são Skills](content/18-o-que-sao-skills.md)
+- [19 - Arquitetura básica de Agents](content/19-arquitetura-basica-de-agents.md)
+- [20 - Multi-Agent Systems](content/20-multi-agent-systems.md)
 
 ### Módulo 5 — MCP
 
-- [18 - O que é MCP](content/18-o-que-e-mcp.md)
-- [19 - MCP Client e MCP Server](content/19-mcp-client-e-mcp-server.md)
-- [20 - Criando seu primeiro MCP](content/20-criando-seu-primeiro-mcp.md)
+- [21 - O que é MCP](content/21-o-que-e-mcp.md)
+- [22 - MCP Client e MCP Server](content/22-mcp-client-e-mcp-server.md)
+- [23 - Criando seu primeiro MCP](content/23-criando-seu-primeiro-mcp.md)
 
 ### Módulo 6 — Produção
 
-- [21 - Como criar aplicações com IA](content/21-como-criar-aplicacoes-com-ia.md)
-- [22 - Segurança em IA](content/22-seguranca-em-ia.md)
-- [23 - Como avaliar respostas de IA](content/23-como-avaliar-respostas-de-ia.md)
-- [24 - Custos e Escalabilidade](content/24-custos-e-escalabilidade.md)
+- [24 - Rodando modelos localmente](content/24-rodando-modelos-localmente.md)
+- [25 - Como criar aplicações com IA](content/25-como-criar-aplicacoes-com-ia.md)
+- [26 - Segurança em IA](content/26-seguranca-em-ia.md)
+- [27 - Como avaliar respostas de IA](content/27-como-avaliar-respostas-de-ia.md)
+- [28 - Custos e Escalabilidade](content/28-custos-e-escalabilidade.md)
+
+### Módulo 7 — Prática
+
+- [29 - Projeto final: um assistente de FAQ com RAG](content/29-projeto-final-faq-rag.md)
 
 ### Apoio
 
@@ -112,6 +120,9 @@ O guia é dividido em 6 módulos. Você pode ler na ordem ou pular para o que ma
 Este repositório também traz exemplos pequenos para praticar:
 
 - [Prompts: ruim vs bom](examples/primeiro-prompt) — comparando prompts e por que alguns funcionam melhor.
+- [Sua primeira chamada de API](examples/chamar-api) — o "Hello World" de falar com um LLM via código.
+- [Few-shot na prática](examples/few-shot) — zero-shot vs few-shot na mesma tarefa, lado a lado.
+- [Rodando um modelo local](examples/modelo-local) — chamando um LLM na sua máquina com Ollama, sem chave de API.
 - [RAG mínimo em Python](examples/rag-mini) — busca por similaridade explicada com código comentado.
 - [Servidor MCP "Hello World"](examples/mcp-hello) — um MCP server mínimo para entender a estrutura.
 
@@ -126,6 +137,14 @@ Uma sugestão simples:
 5. Explique o conceito com suas próprias palavras.
 
 IA se aprende **conversando com ela**. Tenha uma janela de chat aberta enquanto lê.
+
+## Onde continuar estudando
+
+Terminou o guia e quer ir mais fundo? Alguns materiais gratuitos e de qualidade:
+
+- **[CS50's Introduction to Artificial Intelligence with Python](https://cs50.harvard.edu/ai)** (Harvard) — curso gratuito e clássico sobre os fundamentos da IA (busca, otimização, machine learning) com projetos em Python. É **mais técnico e matemático** que este guia, então é um ótimo próximo passo depois daqui.
+- **[Documentação da Anthropic](https://docs.anthropic.com)** e **[da OpenAI](https://platform.openai.com/docs)** — referências oficiais para construir aplicações, com guias de prompt, agents e boas práticas.
+- **[Índice do 4noobs](https://github.com/he4rt/4noobs)** — guias de várias linguagens e tecnologias da comunidade HE4RT para fortalecer sua base.
 
 ## Como Contribuir
 
