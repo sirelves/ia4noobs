@@ -2,86 +2,120 @@
 
 No capítulo anterior vimos o filtro de spam: ele olha um e-mail e responde "spam" ou "não spam". Esse tipo de IA **classifica** ou **prevê** coisas. Ela escolhe entre opções que já existem.
 
-A IA Generativa faz algo diferente: ela **cria conteúdo novo**.
+A IA Generativa faz algo diferente: ela **cria conteúdo novo** — um texto, uma imagem, um áudio ou um trecho de código que não existia antes. São duas famílias de modelos com objetivos opostos, e entender a diferença explica quase tudo o que vem depois neste guia.
 
-## Classificar/prever vs gerar
+## Discriminativo vs generativo
 
-Vamos colocar lado a lado:
+Na literatura, o modelo que classifica/prevê é chamado de **discriminativo**, e o que cria é **generativo**. A intuição por trás dos nomes:
 
-- **IA que classifica/prevê** — recebe algo e devolve um rótulo, um número ou uma decisão.
-  - "Esse e-mail é spam?" → sim
-  - "Quanto vai custar esse imóvel?" → R$ 350.000
-  - "Tem um gato nessa foto?" → tem
+- Um modelo **discriminativo** aprende a **traçar a fronteira** entre categorias. Ele responde "de que lado dessa linha isto está?". Não sabe desenhar um gato — só sabe dizer se há um gato na foto.
+- Um modelo **generativo** aprende **como os dados são feitos por dentro** e, por isso, consegue produzir exemplos novos que parecem ter vindo do mesmo lugar.
 
-- **IA generativa** — recebe um pedido e **produz algo que não existia antes**.
-  - "Escreva um poema sobre o mar" → um poema inédito
-  - "Crie uma imagem de um gato astronauta" → uma imagem nova
-  - "Resuma este texto em 3 linhas" → um resumo escrito na hora
+Lado a lado:
 
-A diferença é essa: uma **decide**, a outra **cria**.
+| | Discriminativo (classifica/prevê) | Generativo (cria) |
+|---|---|---|
+| **O que faz** | Decide, rotula, dá uma nota | Produz conteúdo inédito |
+| **Saída** | Um rótulo ou número | Texto, imagem, áudio, código |
+| **Exemplo de pergunta** | "Isto é spam?" | "Escreva um e-mail educado recusando isto" |
+| | "Gato ou cachorro?" | "Crie uma imagem de um gato astronauta" |
+| | "Qual o preço deste imóvel?" | "Escreva o anúncio deste imóvel" |
+| **Analogia** | O crítico que julga o prato | O cozinheiro que inventa o prato |
 
-## O que a IA generativa consegue gerar
+Os dois podem viver no mesmo produto: um app usa um modelo discriminativo para **detectar** que sua foto tem um cachorro e um generativo para **escrever** a legenda "Golden Retriever curtindo o sol".
 
-Praticamente qualquer tipo de conteúdo digital:
+## A ideia central: aprender a distribuição e amostrar dela
 
-- **Texto** — respostas, redações, e-mails, traduções, resumos.
-- **Imagem** — ilustrações, fotos artificiais, logos, arte.
-- **Áudio** — vozes sintéticas, música, efeitos sonoros.
-- **Vídeo** — clipes curtos gerados a partir de uma descrição.
-- **Código** — funções, scripts e trechos de programa.
+Aqui está o coração da IA generativa, em uma frase:
 
-## E os tais "LLMs"?
+> O modelo aprende como os dados costumam ser (a **distribuição**) e depois **sorteia** um exemplo novo que combina com esse padrão.
 
-Quando o assunto é texto, você vai esbarrar na sigla **LLM** (do inglês *Large Language Model*, ou "Grande Modelo de Linguagem").
+"Distribuição" é só o nome técnico para "o jeito como as coisas normalmente aparecem". Depois de ver milhões de fotos de gatos, o modelo tem uma noção do que faz um gato parecer um gato: orelhas, bigodes, proporções. Ele não guardou as fotos — guardou o **padrão**. Gerar é **amostrar** desse padrão: puxar um exemplo plausível que ninguém tinha visto antes.
 
-Em uma frase: **um LLM é um modelo treinado em uma quantidade enorme de texto para gerar linguagem de forma fluente.** É o cérebro por trás do ChatGPT e dos seus concorrentes. Vamos abrir essa caixa no próximo capítulo.
+O mecanismo de amostragem muda conforme o tipo de conteúdo. Vamos ver os dois mais importantes — **texto** e **imagem** —, que funcionam de maneiras bem diferentes.
 
-## Exemplos de ferramentas
+## Texto: prever o próximo token, de novo e de novo
 
-Para você se localizar no mercado (de forma neutra, sem indicar a "melhor"):
+Para texto, o mecanismo é simples de enunciar: **prever qual é o próximo pedaço de texto, repetir, repetir.** Esses pedaços são chamados de **tokens** (dedicamos o [capítulo 05](05-o-que-sao-tokens.md) inteiro a eles — por ora, pense em "pedaço de palavra"). O modelo olha tudo o que já existe na frase, produz uma **probabilidade** para cada token que poderia vir a seguir, **escolhe um**, cola no fim do texto e recomeça — agora com o token novo fazendo parte da entrada.
 
-- **Texto**: ChatGPT (OpenAI), Claude (Anthropic), Gemini (Google).
-- **Imagem**: DALL-E, Midjourney, Stable Diffusion.
-- **Áudio/voz**: ElevenLabs, Suno (música).
-- **Código**: GitHub Copilot, e os próprios chats acima.
+Um exemplo passo a passo, começando pela frase "O céu está":
 
-Muitas dessas ferramentas já fazem **mais de um tipo** ao mesmo tempo (texto + imagem + áudio). A gente chama isso de modelos **multimodais**.
+```text
+Passo 1 — entrada: "O céu está"
+   candidatos e probabilidades (ILUSTRATIVO, não são números reais):
+      " azul"     → 60%
+      " nublado"  → 25%
+      " limpo"    →  8%
+   escolhe → " azul"
 
-## Por que "generativa" virou febre
+Passo 2 — entrada: "O céu está azul"
+      " e"        → 40%
+      " hoje"     → 30%
+   escolhe → " e"
 
-A IA já existia há décadas. O que mudou para virar manchete em 2022?
+Passo 3 — entrada: "O céu está azul e"  →  escolhe " o"  →  ... e repete até parar.
+```
 
-- **Qualidade**: os resultados ficaram bons o suficiente para serem úteis de verdade.
-- **Facilidade**: você conversa em linguagem natural, sem precisar programar nada.
-- **Versatilidade**: a mesma ferramenta escreve um e-mail, explica um conceito e ajuda no código.
-- **Acesso**: ficou disponível de graça (ou barato) para qualquer pessoa, direto no navegador.
+É só isso, repetido centenas de vezes. Nenhuma frase é planejada de uma vez — ela é **construída um token por vez**. É por isso que a resposta aparece "digitando" na tela: cada palavrinha é uma escolha recém-feita. E é a mesma razão pela qual o modelo às vezes começa uma frase bonita e se perde no meio: ele não sabia o fim quando escolheu o começo.
 
-Foi a combinação de "ficou bom" + "ficou fácil" + "ficou acessível" que estourou.
+## Imagem: partir do ruído e ir limpando (difusão)
 
-## Limitações: cuidado com a confiança
+Para imagem, o truque é **completamente diferente**. Não existe "próximo pixel" da esquerda para a direita. O mecanismo mais comum hoje se chama **difusão** (*diffusion*), e a intuição é linda:
 
-Aqui mora o ponto mais importante deste capítulo:
+> O modelo aprende a **remover ruído**. Ele começa com uma tela de puro chiado aleatório — como a "chuvinha" de uma TV velha — e vai limpando esse chiado passo a passo, até sobrar uma imagem nítida.
 
-> A IA generativa produz conteúdo **plausível**, não necessariamente **verdadeiro**.
+Como ele aprendeu isso? No treino, pegaram imagens reais e foram **borrando** cada uma com ruído até virar chiado total. O modelo treinou para desfazer esse processo: dado um borrão, prever como ele era um passo antes, menos borrado. Repetindo essa "des-borração" muitas vezes, ele parte do chiado puro e chega a uma imagem.
 
-Ela é treinada para gerar algo que **pareça** uma boa resposta. Na maioria das vezes isso coincide com a verdade, mas nem sempre. Ela pode:
+O seu texto (o *prompt*) entra como um **guia**: a cada passo de limpeza, ele empurra o resultado na direção de "gato astronauta". O chiado que vira gato é diferente do que vira paisagem — o texto é quem decide.
 
-- Inventar fatos, datas e fontes que não existem (as famosas "alucinações").
-- Errar contas e raciocínios com toda a confiança do mundo.
-- Misturar informações desatualizadas.
+```text
+Puro ruído  →  [remove um pouco]  →  [remove mais]  →  ...  →  imagem nítida
+  ▓▒░▓▒░         formas vagas          silhueta            "gato astronauta"
+   (guiado o tempo todo pelo seu prompt de texto)
+```
 
-Por isso, a regra de ouro: **use a IA como um assistente esperto, mas sempre confira o que é importante.** Ela acelera o seu trabalho, não substitui o seu senso crítico.
+Guarde a diferença: **texto se constrói acrescentando** (um token de cada vez); **imagem se constrói removendo** (ruído, passo a passo). Quando um mesmo modelo junta vários tipos — texto **e** imagem **e** áudio — chamamos de **multimodal**, tema do [capítulo 03](03-ia-multimodal.md).
+
+## Por dentro: por que o mesmo prompt dá respostas diferentes
+
+Você já deve ter notado: mande o mesmo pedido duas vezes e recebe respostas distintas. Isso não é bug — é o efeito direto da palavra **amostrar**.
+
+Volte ao passo 1 do texto: `" azul"` tinha 60% e `" nublado"` 25%. Se o modelo **sempre** pegasse o mais provável, a resposta seria idêntica toda vez — robótica e repetitiva. Em vez disso, ele faz um **sorteio ponderado**: quase sempre sai `" azul"`, mas às vezes sai `" nublado"`. Uma escolha diferente no começo leva a uma frase inteira diferente no fim.
+
+O parâmetro que controla o quanto ele "arrisca" se chama **temperatura**:
+
+- **Temperatura baixa** (perto de 0): quase sempre pega o token de maior probabilidade. Saída mais **previsível e conservadora**. Boa para tarefas objetivas (extrair um dado, seguir um formato).
+- **Temperatura alta**: dá mais chance aos tokens menos prováveis. Saída mais **variada e criativa** — e mais propensa a viajar.
+
+Na difusão de imagens acontece algo equivalente: o ruído inicial é aleatório (controlado por um número chamado *seed*), então cada geração parte de um chiado diferente e chega a uma imagem diferente. Mesmo *seed* + mesmo prompt tende a repetir a imagem.
+
+Ou seja: a variação **é o funcionamento normal**, não uma falha. Um modelo generativo é uma máquina de sortear coisas plausíveis.
+
+## Os limites: plausível não é o mesmo que verdadeiro
+
+Aqui mora o aviso mais importante do capítulo:
+
+> A IA generativa é otimizada para produzir o que é **provável** — não o que é **verdadeiro**.
+
+Na maioria das vezes o provável coincide com o correto, mas nem sempre — e, quando não coincide, o modelo continua gerando com toda a confiança do mundo. Consequências concretas:
+
+- **Alucinação.** É exatamente o "gerar o mais provável" que faz o modelo **inventar** fatos, datas, citações e links que soam perfeitos e não existem. Para ele, uma fonte falsa com formato convincente é tão "provável" quanto uma real. Trataremos disso a fundo mais à frente no guia.
+- **Erros de conta.** Como ele prevê o texto plausível de uma resposta em vez de calcular, erra contas simples com cara de certeza absoluta.
+- **Vieses.** Ele aprende os padrões do treino — inclusive os preconceitos que estavam lá — e pode reproduzir estereótipos sem "querer".
+- **Direitos autorais.** Normalmente ele **não copia trechos literais** (não é um banco de dados que cola do original), mas, por ter aprendido com obras existentes, pode gerar algo perto demais de um estilo ou conteúdo protegido. Área jurídica ainda em aberto.
+
+A síntese prática: **criativo não é o mesmo que correto.** Use a IA generativa como um assistente rápido e incansável — e confira o que for importante. Ela acelera o seu trabalho; não substitui o seu senso crítico.
 
 ## Exercício
 
-1. Dê um exemplo de tarefa para uma IA **que classifica** e outro para uma IA **que gera**. Explique a diferença.
-2. Cite duas ferramentas de IA generativa de **tipos diferentes** (ex: uma de texto e uma de imagem).
-3. Por que dizemos que a IA gera respostas "plausíveis, mas não necessariamente verdadeiras"? O que isso muda na forma como você deve usá-la?
+1. **Classifique as tarefas.** Para cada item, diga se pede um modelo **discriminativo** ou **generativo**: (a) marcar um comentário como ofensivo; (b) escrever uma resposta educada a esse comentário; (c) prever se um cliente vai cancelar a assinatura; (d) criar o texto do e-mail que tenta reter esse cliente.
+2. **Veja a variação na prática.** Abra um chat de IA (ChatGPT, Claude ou Gemini) e mande **três vezes** o mesmo prompt, começando um chat novo a cada vez — por exemplo: "Escreva uma frase de abertura para um post sobre café." Compare as três saídas. Onde elas mudaram? Conecte isso com a ideia de amostragem e temperatura.
+3. **Provoque uma alucinação com cuidado.** Peça: "Cite três artigos científicos sobre um tema bem específico e nichado, com autores e ano." Depois tente confirmar se existem. O que isso te ensina sobre "plausível ≠ verdadeiro"?
 
 ---
 
 <div align="center">
 
-[« 01 - O que é Inteligência Artificial](01-o-que-e-inteligencia-artificial.md) — [Índice](../README.md#roadmap) — [03 - Como o ChatGPT funciona »](03-como-o-chatgpt-funciona.md)
+[« 01 - O que é Inteligência Artificial](01-o-que-e-inteligencia-artificial.md) — [Índice](../README.md#roadmap) — [03 - IA Multimodal »](03-ia-multimodal.md)
 
 </div>
