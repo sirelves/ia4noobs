@@ -1,4 +1,4 @@
-# 28 - Custos e Escalabilidade
+# 29 - Custos e Escalabilidade
 
 Seu app funciona, é seguro e você sabe avaliá-lo. Falta a pergunta que assombra todo projeto de IA em produção: **quanto isso vai custar quando muita gente usar?** IA não é grátis, e a conta cresce com o uso. Este último capítulo é sobre não tomar um susto na fatura e não derrubar o app quando ele bombar.
 
@@ -56,7 +56,7 @@ Quase todo custo de LLM sai de três lugares. Se a conta está alta, o problema 
 
 **2. Tamanho do contexto.** Cada token de entrada é pago, e o contexto ([capítulo 06](06-o-que-e-janela-de-contexto.md)) é onde o desperdício se esconde. Mandar um PDF de 50 páginas em toda requisição quando o modelo só precisa de dois parágrafos é queimar dinheiro. A alavanca: **mande só o necessário**. Em vez de despejar o documento inteiro, use **RAG** ([capítulo 14](14-o-que-e-rag.md)) para buscar e enviar **apenas os trechos relevantes**. Economiza tokens e ainda **melhora** a resposta, porque o modelo não se perde no meio de ruído.
 
-**3. Número de chamadas.** Custo total = custo por chamada × **número de chamadas**. Esse último fator é fácil de esquecer, mas é onde os **agents** ([capítulo 16](16-o-que-e-um-agent.md)) mordem o bolso: um agent não faz uma chamada por tarefa — ele **pensa, chama uma tool, lê o resultado, pensa de novo, chama outra**. Uma única tarefa pode virar 5, 10, 20 chamadas ao modelo. A alavanca: **reduza os passos**. Menos idas e voltas, prompts que resolvem em uma passada, e cuidado com loops que reprocessam o mesmo contexto crescente a cada volta.
+**3. Número de chamadas.** Custo total = custo por chamada × **número de chamadas**. Esse último fator é fácil de esquecer, mas é onde os **agents** ([capítulo 17](17-o-que-e-um-agent.md)) mordem o bolso: um agent não faz uma chamada por tarefa — ele **pensa, chama uma tool, lê o resultado, pensa de novo, chama outra**. Uma única tarefa pode virar 5, 10, 20 chamadas ao modelo. A alavanca: **reduza os passos**. Menos idas e voltas, prompts que resolvem em uma passada, e cuidado com loops que reprocessam o mesmo contexto crescente a cada volta.
 
 > Ordem prática de ataque: a maior economia quase sempre está em **(1) modelo menor** e **(2) menos contexto**. Só depois pense em microtruques.
 
@@ -135,6 +135,6 @@ Por fim: o **IA4Noobs é open-source e feito pela comunidade**. Achou um erro? T
 
 <div align="center">
 
-[« 27 - Como avaliar respostas de IA](27-como-avaliar-respostas-de-ia.md) — [Índice](../README.md#roadmap) — [29 - Projeto final: um assistente de FAQ com RAG »](29-projeto-final-faq-rag.md)
+[« 28 - Como avaliar respostas de IA](28-como-avaliar-respostas-de-ia.md) — [Índice](../README.md#roadmap) — [30 - Projeto final: um assistente de FAQ com RAG »](30-projeto-final-faq-rag.md)
 
 </div>

@@ -24,9 +24,17 @@ Processo de medir a qualidade das respostas de uma IA de forma sistemática, usa
 
 Um tipo de banco de dados feito para guardar embeddings (vetores de números) e encontrar rapidamente os mais parecidos com uma busca. É a peça central do RAG, pois permite recuperar trechos de texto semelhantes ao que o usuário perguntou.
 
+## Busca híbrida
+
+Busca que combina a busca por **significado** (embeddings) com a busca por **palavra-chave** (a clássica, geralmente com o algoritmo BM25) e junta os dois rankings. Uma cobre o ponto cego da outra: embeddings entendem sinônimos, palavra-chave acerta termos exatos como códigos, siglas e nomes de produto. Muito usada em RAG.
+
 ## Chain-of-Thought (cadeia de raciocínio)
 
 Técnica de prompt em que se pede ao modelo para mostrar o raciocínio passo a passo antes de dar a resposta final. Ao "pensar em voz alta", ele tende a errar menos em problemas de lógica, contas ou várias etapas — parecido com resolver uma conta no papel em vez de de cabeça.
+
+## Chunk (chunking)
+
+Um pedaço de documento. No RAG, os documentos são quebrados em chunks (um parágrafo, uma seção, uma pergunta de FAQ) antes de virarem embeddings, para que a busca devolva só o trecho relevante. O tamanho é um trade-off: pequeno demais perde contexto, grande demais deixa a busca imprecisa.
 
 ## Contexto (janela de contexto)
 
@@ -77,6 +85,10 @@ A capacidade do modelo de "aprender" uma tarefa a partir dos exemplos e instruç
 ## LLM (Modelo de Linguagem)
 
 Sigla para *Large Language Model* (Grande Modelo de Linguagem): um modelo treinado em enormes quantidades de texto para prever a próxima palavra e, assim, conseguir conversar, resumir, traduzir e escrever. ChatGPT, Claude e Gemini são exemplos de produtos baseados em LLMs.
+
+## LLM-wiki
+
+Padrão popularizado por Andrej Karpathy em que a IA **compila** o conhecimento numa pasta de arquivos markdown interligados (com um `index.md` de catálogo) e mantém essas páginas atualizadas, em vez de buscar trechos crus a cada pergunta como no RAG. O conhecimento se acumula com o tempo. O **OKF** (*Open Knowledge Format*), proposto pelo Google, é uma especificação aberta para esse formato.
 
 ## Machine Learning
 
@@ -142,6 +154,10 @@ Sigla para *Retrieval-Augmented Generation* (Geração Aumentada por Recuperaç�
 
 Nome do padrão mais comum de agent: intercalar *Reasoning* (raciocinar) e *Acting* (agir) — o loop pensar → agir → observar → repetir. Alternar pensamento e ação deixa o modelo ajustar o plano com base no que observa a cada passo.
 
+## Re-ranking
+
+Passo extra do RAG: depois que a busca traz vários candidatos (ex.: 20 trechos), um modelo mais preciso e mais caro os **reordena** por relevância real, e só os melhores vão para o prompt. Melhora a qualidade quando a busca simples acerta os trechos, mas erra a ordem.
+
 ## RLHF
 
 Sigla para *Reinforcement Learning from Human Feedback* (Aprendizado por Reforço com Feedback Humano): técnica de treino em que pessoas avaliam as respostas do modelo e esse feedback é usado para deixá-lo mais útil, seguro e alinhado às expectativas. É um dos motivos pelos quais os assistentes modernos parecem tão "educados" e prestativos.
@@ -199,6 +215,6 @@ Quando você pede uma tarefa ao modelo sem dar nenhum exemplo, contando apenas c
 
 <div align="center">
 
-[« 29 - Projeto final: um assistente de FAQ com RAG](29-projeto-final-faq-rag.md) — [Índice](../README.md#roadmap)
+[« 30 - Projeto final: um assistente de FAQ com RAG](30-projeto-final-faq-rag.md) — [Índice](../README.md#roadmap)
 
 </div>

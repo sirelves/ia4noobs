@@ -1,6 +1,6 @@
-# 20 - Multi-Agent Systems
+# 21 - Multi-Agent Systems
 
-No [capítulo 19](19-arquitetura-basica-de-agents.md) montamos **um** agent: um modelo num loop, com um objetivo e um punhado de [tools](17-o-que-e-uma-tool.md). Ele resolve muita coisa sozinho. Mas às vezes a tarefa é grande demais, ou pede papéis que brigam entre si (quem escreve empolgado x quem revisa desconfiado). Aí entra a ideia dos **multi-agent systems** (sistemas multi-agente): em vez de um faz-tudo, **vários agents especializados**, cada um com um papel.
+No [capítulo 20](20-arquitetura-basica-de-agents.md) montamos **um** agent: um modelo num loop, com um objetivo e um punhado de [tools](18-o-que-e-uma-tool.md). Ele resolve muita coisa sozinho. Mas às vezes a tarefa é grande demais, ou pede papéis que brigam entre si (quem escreve empolgado x quem revisa desconfiado). Aí entra a ideia dos **multi-agent systems** (sistemas multi-agente): em vez de um faz-tudo, **vários agents especializados**, cada um com um papel.
 
 Adianto a moral da história, porque ela é o coração deste capítulo: **na maioria dos casos você NÃO precisa disso.** Um agent bom com boas tools resolve. Multi-agente é uma ferramenta cara, e a maior parte deste capítulo é sobre quando ela paga o próprio custo — e quando é só hype.
 
@@ -90,10 +90,10 @@ Repare no ganho real: o **Revisor** tem um prompt que só pensa em "isto está s
 
 ## Por dentro
 
-Aqui está a parte desmistificadora. **Não existe tecnologia nova em "multi-agente".** Cada "agent" é exatamente o que você viu no [capítulo 19](19-arquitetura-basica-de-agents.md): uma **instância de LLM + um prompt de papel + tools**, rodando seu loop. "Multi-agente" é só **orquestrar várias dessas instâncias** e passar a saída de uma pra outra.
+Aqui está a parte desmistificadora. **Não existe tecnologia nova em "multi-agente".** Cada "agent" é exatamente o que você viu no [capítulo 20](20-arquitetura-basica-de-agents.md): uma **instância de LLM + um prompt de papel + tools**, rodando seu loop. "Multi-agente" é só **orquestrar várias dessas instâncias** e passar a saída de uma pra outra.
 
 ```
-UM AGENT (cap. 19):
+UM AGENT (cap. 20):
    [ LLM ] + [ prompt/papel ] + [ tools ] ──► loop até terminar
 
 MULTI-AGENTE:
@@ -111,7 +111,7 @@ Ou seja: a "inteligência de time" não está dentro do modelo. Está na **fiaç
 
 Cada agent é **pelo menos uma** chamada ao modelo — e agents em loop ou em debate são **várias**. Isso tem preço real:
 
-- **Tokens/custo explodem.** Onde um agent gastava, digamos, 3 chamadas, um time de 4 agents com revisão pode gastar 15, 20. O contexto ainda é repassado de um pro outro, inflando cada chamada. Isso vira dinheiro rápido — veja o [capítulo 28](28-custos-e-escalabilidade.md).
+- **Tokens/custo explodem.** Onde um agent gastava, digamos, 3 chamadas, um time de 4 agents com revisão pode gastar 15, 20. O contexto ainda é repassado de um pro outro, inflando cada chamada. Isso vira dinheiro rápido — veja o [capítulo 29](29-custos-e-escalabilidade.md).
 - **Mais lento.** Pipeline é sequencial: você espera A, depois B, depois C. A troca de mensagens tem seu próprio custo de tempo.
 - **Mais pontos de falha.** Se o Pesquisador traz um fato errado, o Escritor escreve em cima dele e o Revisor pode não pegar. **Um agent erra e contamina os outros** — o erro vira "verdade" no contexto de quem vem depois.
 - **Coordenação é difícil.** Quem decide quando parar? E se dois discordam? Você acaba escrevendo lógica de gente-grande pra mediar máquinas.
@@ -137,6 +137,6 @@ Pegue uma tarefa que pareça pedir vários papéis (ex.: *"pesquisar, escrever e
 
 <div align="center">
 
-[« 19 - Arquitetura básica de Agents](19-arquitetura-basica-de-agents.md) — [Índice](../README.md#roadmap) — [21 - O que é MCP »](21-o-que-e-mcp.md)
+[« 20 - Arquitetura básica de Agents](20-arquitetura-basica-de-agents.md) — [Índice](../README.md#roadmap) — [22 - O que é MCP »](22-o-que-e-mcp.md)
 
 </div>

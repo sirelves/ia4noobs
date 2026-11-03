@@ -84,32 +84,33 @@ O guia é dividido em 7 módulos. Você pode ler na ordem ou pular para o que ma
 - [13 - O que são Embeddings](content/13-o-que-sao-embeddings.md)
 - [14 - O que é RAG](content/14-o-que-e-rag.md)
 - [15 - O que é Banco Vetorial](content/15-o-que-e-banco-vetorial.md)
+- [16 - RAG na prática](content/16-rag-na-pratica.md)
 
 ### Módulo 4 — Agents
 
-- [16 - O que é um Agent](content/16-o-que-e-um-agent.md)
-- [17 - O que é uma Tool](content/17-o-que-e-uma-tool.md)
-- [18 - O que são Skills](content/18-o-que-sao-skills.md)
-- [19 - Arquitetura básica de Agents](content/19-arquitetura-basica-de-agents.md)
-- [20 - Multi-Agent Systems](content/20-multi-agent-systems.md)
+- [17 - O que é um Agent](content/17-o-que-e-um-agent.md)
+- [18 - O que é uma Tool](content/18-o-que-e-uma-tool.md)
+- [19 - O que são Skills](content/19-o-que-sao-skills.md)
+- [20 - Arquitetura básica de Agents](content/20-arquitetura-basica-de-agents.md)
+- [21 - Multi-Agent Systems](content/21-multi-agent-systems.md)
 
 ### Módulo 5 — MCP
 
-- [21 - O que é MCP](content/21-o-que-e-mcp.md)
-- [22 - MCP Client e MCP Server](content/22-mcp-client-e-mcp-server.md)
-- [23 - Criando seu primeiro MCP](content/23-criando-seu-primeiro-mcp.md)
+- [22 - O que é MCP](content/22-o-que-e-mcp.md)
+- [23 - MCP Client e MCP Server](content/23-mcp-client-e-mcp-server.md)
+- [24 - Criando seu primeiro MCP](content/24-criando-seu-primeiro-mcp.md)
 
 ### Módulo 6 — Produção
 
-- [24 - Rodando modelos localmente](content/24-rodando-modelos-localmente.md)
-- [25 - Como criar aplicações com IA](content/25-como-criar-aplicacoes-com-ia.md)
-- [26 - Segurança em IA](content/26-seguranca-em-ia.md)
-- [27 - Como avaliar respostas de IA](content/27-como-avaliar-respostas-de-ia.md)
-- [28 - Custos e Escalabilidade](content/28-custos-e-escalabilidade.md)
+- [25 - Rodando modelos localmente](content/25-rodando-modelos-localmente.md)
+- [26 - Como criar aplicações com IA](content/26-como-criar-aplicacoes-com-ia.md)
+- [27 - Segurança em IA](content/27-seguranca-em-ia.md)
+- [28 - Como avaliar respostas de IA](content/28-como-avaliar-respostas-de-ia.md)
+- [29 - Custos e Escalabilidade](content/29-custos-e-escalabilidade.md)
 
 ### Módulo 7 — Prática
 
-- [29 - Projeto final: um assistente de FAQ com RAG](content/29-projeto-final-faq-rag.md)
+- [30 - Projeto final: um assistente de FAQ com RAG](content/30-projeto-final-faq-rag.md)
 
 ### Apoio
 

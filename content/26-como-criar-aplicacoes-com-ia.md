@@ -1,4 +1,4 @@
-# 25 - Como criar aplicações com IA
+# 26 - Como criar aplicações com IA
 
 Você já sabe conversar com modelos, escrever prompts e até montar um MCP. Agora vem a parte de "mundo real": transformar isso em uma **aplicação** que outras pessoas usam. E aqui a mentalidade muda. Não é mais "funciona no meu chat", é "funciona para 1000 usuários, sem vazar minha chave, sem estourar o orçamento e sem quebrar quando o modelo responde besteira".
 
@@ -45,12 +45,12 @@ Um chat de brinquedo é só "montar, chamar, mostrar". Um app de verdade adicion
 
 - **Gestão de prompts** — não espalhe strings de prompt pelo código. Guarde **templates reutilizáveis** num lugar só, versionados, com espaços para preencher (o input do usuário, o contexto). Ajustar o comportamento vira editar um template, não caçar texto no meio da lógica. Base disso é o [cap. 08 - Prompt Engineering](08-o-que-e-prompt-engineering.md).
 - **Contexto / RAG** — quando o modelo precisa de dados que ele não tem (seus documentos, seu FAQ, seu banco), você **busca os trechos relevantes e injeta no prompt**. É o [cap. 14 - RAG](14-o-que-e-rag.md). Sem isso, o modelo inventa (alucina) sobre o que não conhece.
-- **Tools / function calling** — quando o modelo precisa **agir** (consultar um pedido, mandar e-mail, fazer uma conta), você dá a ele funções que seu código executa. O [cap. 17 - O que é uma tool](17-o-que-e-uma-tool.md) detalha. Lembre: quem executa a função é o seu código, não o modelo — ele só pede.
+- **Tools / function calling** — quando o modelo precisa **agir** (consultar um pedido, mandar e-mail, fazer uma conta), você dá a ele funções que seu código executa. O [cap. 18 - O que é uma tool](18-o-que-e-uma-tool.md) detalha. Lembre: quem executa a função é o seu código, não o modelo — ele só pede.
 - **Saída estruturada** — se a resposta vai alimentar outro sistema (um banco, uma tela, outra API), você não quer texto solto. Peça **JSON com campos definidos** e faça o parse. É o [cap. 11 - Como estruturar respostas](11-como-estruturar-respostas.md).
 - **Tratamento de erro** — a API vai falhar às vezes. Tenha **timeout** (não espere para sempre), **retry com backoff** (tentar de novo esperando um pouco mais a cada vez, para falhas temporárias como o erro 429 de limite) e um **fallback** para quando a resposta vier inválida.
 - **Streaming** — mostrar a resposta saindo aos poucos, palavra por palavra, em vez de esperar o texto inteiro. Não deixa mais rápido, mas *parece*, e a experiência melhora muito num chat.
 - **Cache** — se a mesma pergunta chega mil vezes, não pague mil chamadas. Guarde a resposta e reuse. Economiza dinheiro e latência.
-- **Logs + avaliação** — registre entradas e saídas para conseguir depurar e **medir se a IA está respondendo bem** ao longo do tempo. Sem isso você está no escuro. Aprofundado no [cap. 27 - Como avaliar respostas](27-como-avaliar-respostas-de-ia.md).
+- **Logs + avaliação** — registre entradas e saídas para conseguir depurar e **medir se a IA está respondendo bem** ao longo do tempo. Sem isso você está no escuro. Aprofundado no [cap. 28 - Como avaliar respostas](28-como-avaliar-respostas-de-ia.md).
 
 ## Por dentro: a arquitetura de referência mínima
 
@@ -94,14 +94,14 @@ Imagine um assistente que responde perguntas sobre a documentação da sua empre
 4. **Chama o LLM**, que faz a parte ambígua: ler os trechos e escrever uma resposta em português claro.
 5. O código **valida** (veio vazio? cita fonte?), **loga** e devolve.
 
-Perceba que o modelo só entra no passo 4. Buscar, montar, validar e logar são código comum. Esse é exatamente o [Projeto final - FAQ com RAG (cap. 29)](29-projeto-final-faq-rag.md), e o esqueleto da chamada à API está em [`examples/chamar-api`](../examples/chamar-api).
+Perceba que o modelo só entra no passo 4. Buscar, montar, validar e logar são código comum. Esse é exatamente o [Projeto final - FAQ com RAG (cap. 30)](30-projeto-final-faq-rag.md), e o esqueleto da chamada à API está em [`examples/chamar-api`](../examples/chamar-api).
 
 ## Limites honestos (comece simples)
 
 Antes de sonhar grande, encare o que a IA tem de chato:
 
 - **Não-determinismo.** Mesma entrada pode dar saídas diferentes. Isso quebra a intuição de quem programa ("função pura sempre devolve o mesmo"). Como conviver: **valide** a saída sempre, **fixe a temperatura** baixa para tarefas que exigem consistência, e tenha **fallback** quando vier algo fora do esperado. Nunca confie que "veio certo desta vez, vai vir sempre".
-- **Latência e custo.** Cada chamada demora (segundos) e custa (por token). Volume alto vira conta alta. O [cap. 28 - Custos e escalabilidade](28-custos-e-escalabilidade.md) mostra como medir e cortar.
+- **Latência e custo.** Cada chamada demora (segundos) e custa (por token). Volume alto vira conta alta. O [cap. 29 - Custos e escalabilidade](29-custos-e-escalabilidade.md) mostra como medir e cortar.
 - **A API pode falhar ou mudar.** É um serviço externo: fica lento, cai, muda preço ou descontinua um modelo. Seu código precisa aguentar isso (timeout, retry, fallback) e não amarrar tudo num único fornecedor sem pensar.
 - **Comece simples.** Não monte agente com 10 tools e RAG multimodal no dia 1. Faça o menor fluxo que resolve, meça, e só então adicione camada. Over-engineering aqui custa caro em dinheiro e em bug.
 
@@ -120,6 +120,6 @@ Pegue um app de IA que você gostaria de construir (ex.: um resumidor de artigos
 
 <div align="center">
 
-[« 24 - Rodando modelos localmente](24-rodando-modelos-localmente.md) — [Índice](../README.md#roadmap) — [26 - Segurança em IA »](26-seguranca-em-ia.md)
+[« 25 - Rodando modelos localmente](25-rodando-modelos-localmente.md) — [Índice](../README.md#roadmap) — [27 - Segurança em IA »](27-seguranca-em-ia.md)
 
 </div>

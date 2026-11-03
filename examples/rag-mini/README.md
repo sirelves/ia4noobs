@@ -17,8 +17,14 @@ Para rodar offline e sem custo, ele corta vários cantos de propósito:
   um simples **vetor de frequência de palavras** (bag-of-words) sobre um
   vocabulário montado a partir dos documentos. Funciona quando a pergunta
   **repete palavras** dos documentos, mas não entende sinônimos nem significado.
-- **Sem LLM**: nada de geração de texto. Só fazemos a busca. Num RAG completo,
-  os trechos encontrados iriam para o prompt de um LLM gerar a resposta.
+- **Sem LLM**: nada de geração de texto. O script faz a busca e **monta o
+  prompt** (trechos marcados com a fonte + pergunta + regra anti-alucinação),
+  mas não o envia. Pra fechar o ciclo, cole esse prompt no
+  [`chamar-api`](../chamar-api) ou no [`modelo-local`](../modelo-local).
+- **Só palavra-chave**: como o "embedding" é contagem de palavras, a busca se
+  comporta como uma busca **por palavra-chave**. Teste "como começo a codar?":
+  nenhuma palavra bate com "programar", e o resultado vem ruim. Um embedding
+  real acertaria. Veja a seção de busca híbrida no [cap. 16](../../content/16-rag-na-pratica.md).
 - **Sem banco vetorial**: uma simples **lista em memória** faz esse papel. Não
   há índice otimizado nem persistência.
 
@@ -40,7 +46,8 @@ O script pede uma pergunta. Aperte **Enter** para usar o exemplo embutido
 | `texto_para_vetor` (contagem de palavras) | **Modelo de embeddings real** (entende significado; sinônimos ficam próximos) |
 | Lista `DOCUMENTOS` em memória | **Banco vetorial** (ex.: Pinecone, Chroma, pgvector) com índice rápido e persistente |
 | `similaridade_cosseno` no Python | A mesma ideia, mas executada **dentro do banco vetorial** sobre milhões de vetores |
-| `print` dos top 3 | Os trechos são **montados no prompt** e enviados a um **LLM**, que gera a resposta final |
+| `montar_prompt` + `print` | O prompt é **enviado a um LLM**, que gera a resposta final citando a fonte |
+| Fonte `doc-N` (posição na lista) | **Metadados** guardados com cada chunk (arquivo, seção, data) |
 
 O fluxo de um RAG completo, então, é:
 
@@ -53,5 +60,6 @@ O fluxo de um RAG completo, então, é:
 
 ---
 
-Veja [11 - O que é RAG](../../content/11-o-que-e-rag.md) e
-[12 - O que é Banco Vetorial](../../content/12-o-que-e-banco-vetorial.md).
+Veja [14 - O que é RAG](../../content/14-o-que-e-rag.md),
+[15 - O que é Banco Vetorial](../../content/15-o-que-e-banco-vetorial.md) e
+[16 - RAG na prática](../../content/16-rag-na-pratica.md).

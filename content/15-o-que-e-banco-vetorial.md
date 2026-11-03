@@ -105,6 +105,6 @@ A força bruta te dá o vizinho **exato**, sempre — pagando o preço de olhar 
 
 <div align="center">
 
-[« 14 - O que é RAG](14-o-que-e-rag.md) — [Índice](../README.md#roadmap) — [16 - O que é um Agent »](16-o-que-e-um-agent.md)
+[« 14 - O que é RAG](14-o-que-e-rag.md) — [Índice](../README.md#roadmap) — [16 - RAG na prática »](16-rag-na-pratica.md)
 
 </div>

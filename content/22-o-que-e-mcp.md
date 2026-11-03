@@ -1,6 +1,6 @@
-# 21 - O que é MCP
+# 22 - O que é MCP
 
-No [capítulo 17](17-o-que-e-uma-tool.md) vimos que uma IA ganha superpoderes quando recebe **tools**: buscar na web, ler um arquivo, consultar um banco. Só que dar uma tool a um modelo tem um custo escondido de encanamento. Cada tool precisa ser descrita, chamada, autenticada e ter os erros tratados — e cada aplicação de IA fazia isso do seu próprio jeito. O **MCP** existe para acabar com essa bagunça.
+No [capítulo 18](18-o-que-e-uma-tool.md) vimos que uma IA ganha superpoderes quando recebe **tools**: buscar na web, ler um arquivo, consultar um banco. Só que dar uma tool a um modelo tem um custo escondido de encanamento. Cada tool precisa ser descrita, chamada, autenticada e ter os erros tratados — e cada aplicação de IA fazia isso do seu próprio jeito. O **MCP** existe para acabar com essa bagunça.
 
 ## A dor: N × M integrações sob medida
 
@@ -47,7 +47,7 @@ O MCP tem duas pontas, e a estrutura cabe numa frase:
 - **Client (Cliente)**: mora **dentro** do app de IA (o Claude Desktop, o Cursor, sua aplicação). É quem pergunta e quem pede.
 - **Server (Servidor)**: um programinha separado que **expõe** tools e dados — o "adaptador" de uma ferramenta específica.
 
-Os dois conversam num formato de mensagem chamado **JSON-RPC 2.0** — basicamente "chamar uma função remota mandando um JSON". Nada exótico: um pede, o outro responde, e um campo `id` casa cada resposta com o pedido certo. Vamos destrinchar essas duas pontas no [capítulo 22](22-mcp-client-e-mcp-server.md); aqui o importante é ver que **são mensagens de verdade**, não abstração.
+Os dois conversam num formato de mensagem chamado **JSON-RPC 2.0** — basicamente "chamar uma função remota mandando um JSON". Nada exótico: um pede, o outro responde, e um campo `id` casa cada resposta com o pedido certo. Vamos destrinchar essas duas pontas no [capítulo 23](23-mcp-client-e-mcp-server.md); aqui o importante é ver que **são mensagens de verdade**, não abstração.
 
 Quando o app se conecta, o Client se apresenta ao Server (o "handshake"):
 
@@ -114,9 +114,9 @@ Duas verdades para você guardar:
 
 **É um padrão novo, em evolução.** As mensagens acima são reais na estrutura, mas o protocolo ainda amadurece: campos, versões e recursos mudam entre releases (por isso existe o `protocolVersion` no handshake). O ecossistema cresce rápido, e nem todo server é bem-feito ou mantido.
 
-**Instalar um Server MCP dá poder a ele.** Um Server pode ler seus arquivos, acessar suas APIs, mexer nos seus dados — é literalmente pra isso que ele serve. Instalar um server desconhecido é como instalar qualquer programa de origem duvidosa: você está entregando acesso real. Conecte só o que você confia e entende. Vamos tratar disso a fundo no [capítulo 26](26-seguranca-em-ia.md).
+**Instalar um Server MCP dá poder a ele.** Um Server pode ler seus arquivos, acessar suas APIs, mexer nos seus dados — é literalmente pra isso que ele serve. Instalar um server desconhecido é como instalar qualquer programa de origem duvidosa: você está entregando acesso real. Conecte só o que você confia e entende. Vamos tratar disso a fundo no [capítulo 27](27-seguranca-em-ia.md).
 
-Quer ver um Server MCP de verdade, pequeno e completo? Dá uma olhada no exemplo [`examples/mcp-hello`](../examples/mcp-hello). E o passo a passo de construir o seu está no [capítulo 23](23-criando-seu-primeiro-mcp.md) — depois de entender Client e Server no [capítulo 22](22-mcp-client-e-mcp-server.md).
+Quer ver um Server MCP de verdade, pequeno e completo? Dá uma olhada no exemplo [`examples/mcp-hello`](../examples/mcp-hello). E o passo a passo de construir o seu está no [capítulo 24](24-criando-seu-primeiro-mcp.md) — depois de entender Client e Server no [capítulo 23](23-mcp-client-e-mcp-server.md).
 
 ## Exercício
 
@@ -128,6 +128,6 @@ Quer ver um Server MCP de verdade, pequeno e completo? Dá uma olhada no exemplo
 
 <div align="center">
 
-[« 20 - Multi-Agent Systems](20-multi-agent-systems.md) — [Índice](../README.md#roadmap) — [22 - MCP Client e MCP Server »](22-mcp-client-e-mcp-server.md)
+[« 21 - Multi-Agent Systems](21-multi-agent-systems.md) — [Índice](../README.md#roadmap) — [23 - MCP Client e MCP Server »](23-mcp-client-e-mcp-server.md)
 
 </div>

@@ -1,6 +1,6 @@
-# 18 - O que são Skills
+# 19 - O que são Skills
 
-No [capítulo 17](17-o-que-e-uma-tool.md) vimos que uma **tool** dá ao agent uma **ação**: uma função que roda de verdade — buscar na web, mandar um e-mail, rodar um cálculo. A tool é a **mão**. Agora vamos ao complemento: as **skills**, que são o **manual**. Uma tool sabe *fazer* uma coisa; uma skill sabe *como* uma tarefa deve ser feita direito. São peças diferentes que se encaixam, e confundir as duas é o erro número um de quem começa.
+No [capítulo 18](18-o-que-e-uma-tool.md) vimos que uma **tool** dá ao agent uma **ação**: uma função que roda de verdade — buscar na web, mandar um e-mail, rodar um cálculo. A tool é a **mão**. Agora vamos ao complemento: as **skills**, que são o **manual**. Uma tool sabe *fazer* uma coisa; uma skill sabe *como* uma tarefa deve ser feita direito. São peças diferentes que se encaixam, e confundir as duas é o erro número um de quem começa.
 
 ## A ideia: um módulo de know-how que entra sob demanda
 
@@ -102,6 +102,6 @@ Pense em uma tarefa que você faz repetidamente e sempre do mesmo jeito (montar 
 
 <div align="center">
 
-[« 17 - O que é uma Tool](17-o-que-e-uma-tool.md) — [Índice](../README.md#roadmap) — [19 - Arquitetura básica de Agents »](19-arquitetura-basica-de-agents.md)
+[« 18 - O que é uma Tool](18-o-que-e-uma-tool.md) — [Índice](../README.md#roadmap) — [20 - Arquitetura básica de Agents »](20-arquitetura-basica-de-agents.md)
 
 </div>

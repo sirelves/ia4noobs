@@ -63,7 +63,7 @@ Saída:      500 tokens  →    500 / 1.000.000 × US$ 0,60  = US$ 0,0003
                                                    Total ≈ US$ 0,0006
 ```
 
-Parece nada — e é, para **uma** chamada. Mas multiplique por 100 mil chamadas/mês e viram US$ 60. Agora imagine que você mandou junto, sem precisar, um manual de 50 mil tokens de contexto em toda chamada. A conta explode. **É por isso que ser objetivo não é só elegância: é a diferença entre uma feature barata e uma cara.** Veremos isso a fundo no [capítulo 28](28-custos-e-escalabilidade.md).
+Parece nada — e é, para **uma** chamada. Mas multiplique por 100 mil chamadas/mês e viram US$ 60. Agora imagine que você mandou junto, sem precisar, um manual de 50 mil tokens de contexto em toda chamada. A conta explode. **É por isso que ser objetivo não é só elegância: é a diferença entre uma feature barata e uma cara.** Veremos isso a fundo no [capítulo 29](29-custos-e-escalabilidade.md).
 
 ## Por dentro: de token a "próxima palavra"
 
@@ -101,7 +101,7 @@ Ou seja: o token é a **entrada** e a **saída** da máquina. O modelo não gera
 
 ### Por que a IA erra contas
 
-Isso explica um mistério comum: por que um modelo tão avançado erra `4327 × 8`? Porque números **também viram tokens**, e de um jeito bagunçado — `4327` pode virar `43` + `27`, ou `4` + `327`, dependendo do que apareceu no treino. O modelo não "faz a conta": ele tenta **prever os tokens** de um resultado plausível. Para contas de verdade, o certo é dar a ele uma **tool** de calculadora (veremos no [capítulo 17](17-o-que-e-uma-tool.md)) em vez de confiar no chute.
+Isso explica um mistério comum: por que um modelo tão avançado erra `4327 × 8`? Porque números **também viram tokens**, e de um jeito bagunçado — `4327` pode virar `43` + `27`, ou `4` + `327`, dependendo do que apareceu no treino. O modelo não "faz a conta": ele tenta **prever os tokens** de um resultado plausível. Para contas de verdade, o certo é dar a ele uma **tool** de calculadora (veremos no [capítulo 18](18-o-que-e-uma-tool.md)) em vez de confiar no chute.
 
 ## Veja com seus próprios olhos
 

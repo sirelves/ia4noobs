@@ -9,9 +9,9 @@ Fazemos isso com o **Ollama**, um programa que baixa e executa modelos de IA
 localmente. O script `local.py` conversa com ele usando só a biblioteca padrão
 do Python — **nada** para instalar via `pip`.
 
-> Este exemplo acompanha o capítulo [24 - Rodando modelos localmente](../../content/24-rodando-modelos-localmente.md)
-> e se conecta com os capítulos [26 - Segurança em IA](../../content/26-seguranca-em-ia.md) e
-> [28 - Custos e Escalabilidade](../../content/28-custos-e-escalabilidade.md).
+> Este exemplo acompanha o capítulo [25 - Rodando modelos localmente](../../content/25-rodando-modelos-localmente.md)
+> e se conecta com os capítulos [27 - Segurança em IA](../../content/27-seguranca-em-ia.md) e
+> [29 - Custos e Escalabilidade](../../content/29-custos-e-escalabilidade.md).
 
 ---
 

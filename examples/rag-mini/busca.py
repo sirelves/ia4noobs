@@ -123,7 +123,33 @@ def buscar(pergunta, documentos, vocabulario, top_n=3):
 
 
 # ---------------------------------------------------------------------------
-# 7) EXECUÇÃO — junta tudo
+# 7) MONTAGEM DO PROMPT — o "augmented" do RAG
+# ---------------------------------------------------------------------------
+# Os trechos recuperados vão para dentro do prompt, cada um marcado com a sua
+# fonte. Documentos em cima, pergunta embaixo, e uma saída honesta para quando
+# a resposta não estiver nos trechos (a principal defesa anti-alucinação).
+# Este é o texto que você enviaria para um LLM (veja examples/chamar-api).
+def montar_prompt(pergunta, trechos):
+    blocos = []
+    for score, doc in trechos:
+        # Aqui a "fonte" é a posição na lista; num RAG real seria o nome do
+        # arquivo/seção, guardado como metadado junto de cada chunk.
+        fonte = f"doc-{DOCUMENTOS.index(doc) + 1}"
+        blocos.append(f'  <documento fonte="{fonte}">{doc}</documento>')
+
+    return (
+        "<documentos>\n"
+        + "\n".join(blocos)
+        + "\n</documentos>\n\n"
+        "Responda a pergunta usando APENAS os documentos acima.\n"
+        'Se a resposta não estiver neles, diga "não encontrei isso nos documentos".\n'
+        "No fim, cite a fonte que você usou.\n\n"
+        f"Pergunta: {pergunta}"
+    )
+
+
+# ---------------------------------------------------------------------------
+# 8) EXECUÇÃO — junta tudo
 # ---------------------------------------------------------------------------
 if __name__ == "__main__":
     # Monta o vocabulário uma vez (num RAG real, os vetores ficariam salvos
@@ -150,8 +176,10 @@ if __name__ == "__main__":
         print(f"{posicao}. (score {score:.3f}) {doc}")
 
     print("-" * 60)
+    print("Prompt montado (o que iria para o LLM):\n")
+    print(montar_prompt(pergunta, melhores))
+    print("-" * 60)
     print(
-        "Num RAG de verdade, estes trechos recuperados seriam colocados\n"
-        "dentro do prompt de um LLM, que então geraria a resposta final\n"
-        "usando este contexto."
+        "Num RAG completo, este prompt seria enviado a um LLM, que geraria\n"
+        "a resposta final com base nos trechos (e citando a fonte)."
     )

@@ -31,7 +31,7 @@ Melhor:    Tenho uma loja de roupas pequena no Instagram e quero
 Peça `4327 × 89` e é bem capaz de vir um número errado — com toda a confiança do mundo.
 
 - **Por que acontece:** números **também viram tokens** ([cap. 05](05-o-que-sao-tokens.md)), e de um jeito bagunçado (`4327` pode virar `43` + `27`). O modelo não executa a conta: ele **prevê os tokens** de um resultado que *pareça* certo. Para números pequenos que apareceram muito no treino, acerta; para contas longas, chuta.
-- **Como evitar:** peça o **passo a passo** (Chain of Thought, [cap. 10](10-few-shot-e-chain-of-thought.md)) — quebrar em etapas curtas melhora bastante. Melhor ainda: dê a ele uma **calculadora de verdade** via *tool* ([cap. 17](17-o-que-e-uma-tool.md)), aí a conta sai de um programa, não de um chute.
+- **Como evitar:** peça o **passo a passo** (Chain of Thought, [cap. 10](10-few-shot-e-chain-of-thought.md)) — quebrar em etapas curtas melhora bastante. Melhor ainda: dê a ele uma **calculadora de verdade** via *tool* ([cap. 18](18-o-que-e-uma-tool.md)), aí a conta sai de um programa, não de um chute.
 
 ## Erro 4: Enfiar contexto demais
 
@@ -59,7 +59,7 @@ Achar que ele "quer" te ajudar, "acredita" no que diz, "entende" seu problema ou
 Somar uma coluna de planilha, validar um CPF, ordenar mil nomes, conferir se um e-mail tem formato válido: dá pra pedir à IA, mas é a ferramenta errada.
 
 - **Por que acontece:** essas tarefas têm **uma** resposta certa e uma regra exata. IA trabalha por probabilidade, então introduz chance de erro onde não deveria existir nenhuma — e ainda custa mais e é mais lenta que três linhas de código.
-- **Como evitar:** regra de bolso — **IA para o ambíguo, código para o exato.** Redigir, resumir, classificar por sentido, sugerir ideias: IA. Contas, validações, regras fixas, dados estruturados: código (às vezes exposto à IA como *tool*, [cap. 17](17-o-que-e-uma-tool.md)).
+- **Como evitar:** regra de bolso — **IA para o ambíguo, código para o exato.** Redigir, resumir, classificar por sentido, sugerir ideias: IA. Contas, validações, regras fixas, dados estruturados: código (às vezes exposto à IA como *tool*, [cap. 18](18-o-que-e-uma-tool.md)).
 
 ## Por dentro: a raiz comum
 
@@ -88,7 +88,7 @@ Soa impecável: número de artigo, número da lei, parágrafo. Mas "portabilidad
 
 ## Limites honestos
 
-Não existe usar IA "sem nunca errar" — nem para quem tem experiência. Alucinação e erro de conta não são bugs que somem numa atualização; são consequência de como a tecnologia funciona. O que muda com a prática não é parar de errar, é ter **processo**: verificar o que importa, dar o contexto e as *tools* certas, e **avaliar a resposta com método** em vez de aceitar de primeira ([cap. 27](27-como-avaliar-respostas-de-ia.md)). A defesa é o processo, não a fé na ferramenta.
+Não existe usar IA "sem nunca errar" — nem para quem tem experiência. Alucinação e erro de conta não são bugs que somem numa atualização; são consequência de como a tecnologia funciona. O que muda com a prática não é parar de errar, é ter **processo**: verificar o que importa, dar o contexto e as *tools* certas, e **avaliar a resposta com método** em vez de aceitar de primeira ([cap. 28](28-como-avaliar-respostas-de-ia.md)). A defesa é o processo, não a fé na ferramenta.
 
 ## Exercício
 

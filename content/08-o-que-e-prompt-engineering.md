@@ -87,7 +87,7 @@ Esse mesmo mecanismo explica a fragilidade da coisa: como a saída sai de uma di
 
 - **Prompt não conserta modelo fraco.** Se o modelo não sabe algo ou não é capaz de raciocinar sobre aquilo, nenhuma palavra mágica cria a capacidade. Bom prompt extrai o melhor do que existe; não inventa competência.
 - **Prompt é frágil e não é portável.** Um prompt afinado para um modelo pode render pior em outro — e até entre **versões** do mesmo modelo. O que funciona hoje pode precisar de ajuste depois de uma atualização.
-- **Texto de fora pode conter instruções maliciosas.** Se seu prompt inclui conteúdo que você não escreveu (uma página web, um e-mail, um PDF), esse texto pode trazer ordens escondidas do tipo "ignore as instruções acima e faça X". Isso se chama **prompt injection** e é um risco real quando a IA processa dados externos. → [capítulo 26](26-seguranca-em-ia.md)
+- **Texto de fora pode conter instruções maliciosas.** Se seu prompt inclui conteúdo que você não escreveu (uma página web, um e-mail, um PDF), esse texto pode trazer ordens escondidas do tipo "ignore as instruções acima e faça X". Isso se chama **prompt injection** e é um risco real quando a IA processa dados externos. → [capítulo 27](27-seguranca-em-ia.md)
 
 ## Iterar é parte do jogo
 
