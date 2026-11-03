@@ -1,4 +1,4 @@
-# 24 - Rodando modelos localmente
+# 25 - Rodando modelos localmente
 
 Até aqui, quase tudo dependeu de uma **API** na nuvem: você manda o prompt para a OpenAI, a Anthropic ou o Google, e eles respondem. Mas dá para rodar um modelo de IA **na sua própria máquina** — de graça, sem chave de API e até sem internet. Neste capítulo você entende quando isso vale a pena, e principalmente **por que** um modelo cabe (ou não) no seu computador.
 
@@ -113,7 +113,7 @@ Isso significa que trocar "nuvem" por "local" pode ser mudar **uma linha de conf
 | Precisa funcionar offline | O volume é alto e variável |
 | Está estudando / experimentando | A tarefa é difícil demais para modelo pequeno |
 
-A conta de custo (local vs. nuvem, hardware vs. por-token) aparece em detalhe no [capítulo 28](28-custos-e-escalabilidade.md).
+A conta de custo (local vs. nuvem, hardware vs. por-token) aparece em detalhe no [capítulo 29](29-custos-e-escalabilidade.md).
 
 ## Seja honesto: os limites
 
@@ -134,6 +134,6 @@ A conta de custo (local vs. nuvem, hardware vs. por-token) aparece em detalhe no
 
 <div align="center">
 
-[« 23 - Criando seu primeiro MCP](23-criando-seu-primeiro-mcp.md) — [Índice](../README.md#roadmap) — [25 - Como criar aplicações com IA »](25-como-criar-aplicacoes-com-ia.md)
+[« 24 - Criando seu primeiro MCP](24-criando-seu-primeiro-mcp.md) — [Índice](../README.md#roadmap) — [26 - Como criar aplicações com IA »](26-como-criar-aplicacoes-com-ia.md)
 
 </div>

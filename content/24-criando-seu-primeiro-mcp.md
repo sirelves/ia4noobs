@@ -1,6 +1,6 @@
-# 23 - Criando seu primeiro MCP
+# 24 - Criando seu primeiro MCP
 
-No [capítulo 22](22-mcp-client-e-mcp-server.md) você viu o MCP por fora: um **server** expõe ferramentas, um **client** as consome, e no meio deles trafega o protocolo. Agora vamos construir um server de verdade — e você vai descobrir que é bem menos trabalho do que parece. Este capítulo caminha pelo exemplo **[`examples/mcp-hello`](../examples/mcp-hello)**, que já está pronto no repositório para você rodar e modificar.
+No [capítulo 23](23-mcp-client-e-mcp-server.md) você viu o MCP por fora: um **server** expõe ferramentas, um **client** as consome, e no meio deles trafega o protocolo. Agora vamos construir um server de verdade — e você vai descobrir que é bem menos trabalho do que parece. Este capítulo caminha pelo exemplo **[`examples/mcp-hello`](../examples/mcp-hello)**, que já está pronto no repositório para você rodar e modificar.
 
 O truque: você **não escreve o protocolo**. Escreve funções Python normais e deixa um SDK cuidar do resto.
 
@@ -98,7 +98,7 @@ Depois de recarregar o host, ele sobe o seu server, pergunta "quais tools você 
 
 ## Por dentro
 
-Por que ficou tão simples? Porque o FastMCP **esconde o JSON-RPC** — aquele protocolo de mensagens que você viu no [capítulo 22](22-mcp-client-e-mcp-server.md).
+Por que ficou tão simples? Porque o FastMCP **esconde o JSON-RPC** — aquele protocolo de mensagens que você viu no [capítulo 23](23-mcp-client-e-mcp-server.md).
 
 Quando o host pergunta quais ferramentas existem, quem responde com a lista, os nomes, os tipos de parâmetro e as descrições é o SDK — lendo as suas funções por baixo dos panos. Quando o modelo decide chamar `somar` com `a=7` e `b=5`, chega uma mensagem JSON-RPC pelo stdio; o SDK a interpreta, converte os argumentos para os tipos certos, chama a sua função `somar(7, 5)`, pega o `12` que ela devolve e o embrulha de volta numa resposta JSON-RPC. Você **nunca** monta nem lê essas mensagens à mão.
 
@@ -107,8 +107,8 @@ Em outras palavras: aquelas anotações de tipo e a docstring que parecem "só b
 ## Gotchas honestos
 
 - **"Travou" ao rodar sozinho.** Já explicado: é o comportamento normal do stdio esperando um client. Não é bug.
-- **Docstring ruim = tool chamada na hora errada.** Se a descrição for vaga ("faz uma conta"), o modelo pode não chamar quando deveria — ou chamar quando não deveria. Uma boa descrição diz *o que faz* **e** *quando usar*. Isso conecta direto com o que vimos em [o que é uma tool](17-o-que-e-uma-tool.md).
-- **Cuidado com tools poderosas.** Seu server roda **código de verdade**. Uma tool que apaga arquivos, roda comandos do sistema ou faz pagamentos é útil — e perigosa. Comece pelo mínimo, valide as entradas e dê a cada tool só o acesso que ela precisa. Segurança em IA tem capítulo próprio: [capítulo 26](26-seguranca-em-ia.md).
+- **Docstring ruim = tool chamada na hora errada.** Se a descrição for vaga ("faz uma conta"), o modelo pode não chamar quando deveria — ou chamar quando não deveria. Uma boa descrição diz *o que faz* **e** *quando usar*. Isso conecta direto com o que vimos em [o que é uma tool](18-o-que-e-uma-tool.md).
+- **Cuidado com tools poderosas.** Seu server roda **código de verdade**. Uma tool que apaga arquivos, roda comandos do sistema ou faz pagamentos é útil — e perigosa. Comece pelo mínimo, valide as entradas e dê a cada tool só o acesso que ela precisa. Segurança em IA tem capítulo próprio: [capítulo 27](27-seguranca-em-ia.md).
 
 ## Exercício
 
@@ -122,6 +122,6 @@ Em outras palavras: aquelas anotações de tipo e a docstring que parecem "só b
 
 <div align="center">
 
-[« 22 - MCP Client e MCP Server](22-mcp-client-e-mcp-server.md) — [Índice](../README.md#roadmap) — [24 - Rodando modelos localmente »](24-rodando-modelos-localmente.md)
+[« 23 - MCP Client e MCP Server](23-mcp-client-e-mcp-server.md) — [Índice](../README.md#roadmap) — [25 - Rodando modelos localmente »](25-rodando-modelos-localmente.md)
 
 </div>

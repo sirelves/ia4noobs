@@ -1,6 +1,6 @@
-# 17 - O que é uma Tool
+# 18 - O que é uma Tool
 
-No [capítulo 16](16-o-que-e-um-agent.md) vimos que o que dá autonomia a um agent são as **tools**. Agora vamos entender o que elas são de verdade — e, principalmente, o mecanismo exato pelo qual um modelo as usa. Spoiler: o modelo **decide**, mas quem **executa** é o seu código. Essa separação é a ideia mais importante do capítulo.
+No [capítulo 17](17-o-que-e-um-agent.md) vimos que o que dá autonomia a um agent são as **tools**. Agora vamos entender o que elas são de verdade — e, principalmente, o mecanismo exato pelo qual um modelo as usa. Spoiler: o modelo **decide**, mas quem **executa** é o seu código. Essa separação é a ideia mais importante do capítulo.
 
 ## O que é uma tool
 
@@ -108,9 +108,9 @@ Repare: as anotações de tipo (`a: int, b: int`) viram o schema dos parâmetros
 
 ## Tools, agents e MCP
 
-Volte ao [capítulo 16](16-o-que-e-um-agent.md): um agent é um loop que **pensa, age e observa**. Cada "agir" desse loop é, literalmente, **uma tool call** — os 4 passos que acabamos de ver, repetidos quantas vezes forem necessárias. É assim que o agent lê um arquivo, decide o que fazer com o conteúdo, chama outra tool, e vai encadeando.
+Volte ao [capítulo 17](17-o-que-e-um-agent.md): um agent é um loop que **pensa, age e observa**. Cada "agir" desse loop é, literalmente, **uma tool call** — os 4 passos que acabamos de ver, repetidos quantas vezes forem necessárias. É assim que o agent lê um arquivo, decide o que fazer com o conteúdo, chama outra tool, e vai encadeando.
 
-E há um jeito **padrão** de expor tools para qualquer IA, sem reescrever tudo para cada modelo: o **MCP** (Model Context Protocol), que veremos no [capítulo 21](21-o-que-e-mcp.md). O `examples/mcp-hello` é justamente um servidor MCP mínimo. A ideia: você declara suas tools uma vez, num servidor MCP, e qualquer app de IA compatível passa a poder usá-las.
+E há um jeito **padrão** de expor tools para qualquer IA, sem reescrever tudo para cada modelo: o **MCP** (Model Context Protocol), que veremos no [capítulo 22](22-o-que-e-mcp.md). O `examples/mcp-hello` é justamente um servidor MCP mínimo. A ideia: você declara suas tools uma vez, num servidor MCP, e qualquer app de IA compatível passa a poder usá-las.
 
 ## Limites e segurança (a parte honesta)
 
@@ -124,13 +124,13 @@ Por isso, regra de ouro: **seu código deve VALIDAR tudo que vem do passo 2 ante
 E cuidado redobrado com tools **poderosas**. Uma ferramenta que apaga arquivos, gasta dinheiro, envia e-mails ou mexe num banco de produção é perigosa nas mãos de um modelo que, vez ou outra, erra. Duas defesas simples:
 
 1. **Dê só o necessário.** Se o agent só precisa ler, não entregue uma tool que também apaga.
-2. **Confirme ações destrutivas.** Antes de executar algo irreversível, peça confirmação humana. Aprofundamos isso no [capítulo 26](26-seguranca-em-ia.md).
+2. **Confirme ações destrutivas.** Antes de executar algo irreversível, peça confirmação humana. Aprofundamos isso no [capítulo 27](27-seguranca-em-ia.md).
 
 Descrições claras reduzem os erros; validação e permissões mínimas contêm o estrago quando o erro acontece mesmo assim.
 
 ## Exercício
 
-1. Pegue uma das tools que você listou no exercício do [capítulo 16](16-o-que-e-um-agent.md).
+1. Pegue uma das tools que você listou no exercício do [capítulo 17](17-o-que-e-um-agent.md).
 2. Escreva a **declaração** dela em JSON, com `name`, `description` e `parameters` (com o `type` de cada parâmetro). Capriche na `description`: deixe claro **o que** faz e **quando** o modelo deve usá-la.
 3. Simule o passo 2: escreva o `tool_call` que o modelo geraria para uma pergunta específica — qual argumento ele passaria?
 4. Pense numa tool **perigosa** (apagar, pagar, enviar). Como você a protegeria? Escreva uma validação que seu código faria antes de executar, e diga se ela pediria confirmação humana.
@@ -139,6 +139,6 @@ Descrições claras reduzem os erros; validação e permissões mínimas contêm
 
 <div align="center">
 
-[« 16 - O que é um Agent](16-o-que-e-um-agent.md) — [Índice](../README.md#roadmap) — [18 - O que são Skills »](18-o-que-sao-skills.md)
+[« 17 - O que é um Agent](17-o-que-e-um-agent.md) — [Índice](../README.md#roadmap) — [19 - O que são Skills »](19-o-que-sao-skills.md)
 
 </div>

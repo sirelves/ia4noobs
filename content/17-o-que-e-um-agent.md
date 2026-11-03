@@ -1,4 +1,4 @@
-# 16 - O que é um Agent
+# 17 - O que é um Agent
 
 Até aqui, você viu o modelo de linguagem (LLM) como uma máquina de **pergunta → resposta**. Você manda um texto, ele te devolve outro texto. Simples assim.
 
@@ -80,7 +80,7 @@ Ou seja, no loop ReAct:
 - **agir** = o modelo emitir uma *tool call*;
 - **observar** = o resultado dessa tool voltar para o contexto, para o modelo ler.
 
-É exatamente essa mecânica de *tool call* que veremos em detalhe no [capítulo 17](17-o-que-e-uma-tool.md).
+É exatamente essa mecânica de *tool call* que veremos em detalhe no [capítulo 18](18-o-que-e-uma-tool.md).
 
 ## O que dá autonomia: as Tools
 
@@ -117,7 +117,7 @@ Chamada 3:  [objetivo] + [ação 1] + [resultado 1] + [ação 2] + [resultado 2]
 
 Três consequências práticas caem direto dessa estrutura:
 
-1. **Custa mais.** Uma tarefa não é uma chamada, são **várias** — uma por passo. E cada chamada carrega o histórico inteiro (que só cresce), então você paga tokens repetidos a cada volta. É por isso que um agent é sensivelmente mais caro que uma pergunta única a um chatbot. Reveja o peso disso no [capítulo 05](05-o-que-sao-tokens.md) e no [capítulo 28](28-custos-e-escalabilidade.md).
+1. **Custa mais.** Uma tarefa não é uma chamada, são **várias** — uma por passo. E cada chamada carrega o histórico inteiro (que só cresce), então você paga tokens repetidos a cada volta. É por isso que um agent é sensivelmente mais caro que uma pergunta única a um chatbot. Reveja o peso disso no [capítulo 05](05-o-que-sao-tokens.md) e no [capítulo 29](29-custos-e-escalabilidade.md).
 2. **O histórico pode encher a janela.** Como o contexto só cresce a cada passo, uma tarefa longa pode estourar a **janela de contexto** ([capítulo 06](06-o-que-e-janela-de-contexto.md)) — e aí o agent começa a "esquecer" os primeiros passos.
 3. **Precisa de uma condição de parada.** Nada garante sozinho que o loop termina. O sistema precisa de uma regra explícita: parar quando o **objetivo foi cumprido** ou quando bater um **número máximo de passos**. Sem isso, um agent confuso pode rodar para sempre (e queimar dinheiro).
 
@@ -158,6 +158,6 @@ Guarde sua lista de tools: ela vai fazer sentido no próximo capítulo.
 
 <div align="center">
 
-[« 15 - O que é Banco Vetorial](15-o-que-e-banco-vetorial.md) — [Índice](../README.md#roadmap) — [17 - O que é uma Tool »](17-o-que-e-uma-tool.md)
+[« 16 - RAG na prática](16-rag-na-pratica.md) — [Índice](../README.md#roadmap) — [18 - O que é uma Tool »](18-o-que-e-uma-tool.md)
 
 </div>

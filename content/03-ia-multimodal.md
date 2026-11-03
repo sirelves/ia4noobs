@@ -106,7 +106,7 @@ O motivo de a IA conseguir "misturar" uma foto e uma pergunta no mesmo raciocín
 
 - **Ela "vê" contando tokens visuais, não olhando como você.** Como a imagem virou um punhado de patches, o modelo **erra contagem** ("quantas pessoas tem na foto?") e **lê mal texto dentro de imagens** (OCR falho): as letras estão espalhadas por vários patches e ele precisa "adivinhar" juntando os pedaços. Não é que ele seja desatento — é que ele nunca viu a imagem inteira de uma vez.
 - **Imagens geradas erram dedos e texto.** Mãos com seis dedos, placas com letras embaralhadas, reflexos impossíveis. A difusão aprende **padrões visuais**, não um modelo explícito de "como o mundo funciona" — ela não sabe que mão tem cinco dedos, só que costuma parecer assim. Melhora rápido, mas confira sempre.
-- **Custa mais.** Uma imagem vira **muitos** tokens visuais, então processá-la consome bem mais que uma frase de texto — o que pesa no bolso quando você constrói uma aplicação (veja [capítulo 28](28-custos-e-escalabilidade.md)).
+- **Custa mais.** Uma imagem vira **muitos** tokens visuais, então processá-la consome bem mais que uma frase de texto — o que pesa no bolso quando você constrói uma aplicação (veja [capítulo 29](29-custos-e-escalabilidade.md)).
 - **Direitos e privacidade.** Cuidado com imagens de pessoas, obras protegidas e dados sensíveis. Não mande o que você não pode compartilhar.
 
 ## Exercício

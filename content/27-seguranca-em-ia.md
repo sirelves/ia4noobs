@@ -1,4 +1,4 @@
-# 26 - Segurança em IA
+# 27 - Segurança em IA
 
 Colocar IA em produção abre uma porta nova de riscos. Sistemas normais têm uma separação clara entre **código** (as ordens do programa) e **dados** (o que o programa processa). Um LLM apaga essa fronteira: para ele, tudo é **texto no mesmo saco**. É daí que nasce a maior parte das ameaças deste capítulo — e algumas delas **ainda não têm solução 100%**. A meta aqui não é te deixar paranoico, é te dar nome aos ataques e uma mentalidade de defesa em camadas.
 
@@ -47,7 +47,7 @@ Tudo que entra no prompt **sai da sua máquina** e vira contexto que o modelo po
 
 ## Tools perigosas
 
-No [capítulo 17](17-o-que-e-uma-tool.md) você viu que dar **tools** a um modelo é dar **poder de agir** — mandar e-mail, rodar query, apagar arquivo, gastar dinheiro. O problema: o modelo erra, e agora o erro tem consequência física. Pior: quem consegue injetar instruções nele (via injeção indireta) herda esse poder.
+No [capítulo 18](18-o-que-e-uma-tool.md) você viu que dar **tools** a um modelo é dar **poder de agir** — mandar e-mail, rodar query, apagar arquivo, gastar dinheiro. O problema: o modelo erra, e agora o erro tem consequência física. Pior: quem consegue injetar instruções nele (via injeção indireta) herda esse poder.
 
 A defesa é o **princípio do menor privilégio**: dê só o acesso que a tarefa exige, e nada além.
 
@@ -122,6 +122,6 @@ Vale repetir, sem enfeite:
 
 <div align="center">
 
-[« 25 - Como criar aplicações com IA](25-como-criar-aplicacoes-com-ia.md) — [Índice](../README.md#roadmap) — [27 - Como avaliar respostas de IA »](27-como-avaliar-respostas-de-ia.md)
+[« 26 - Como criar aplicações com IA](26-como-criar-aplicacoes-com-ia.md) — [Índice](../README.md#roadmap) — [28 - Como avaliar respostas de IA »](28-como-avaliar-respostas-de-ia.md)
 
 </div>

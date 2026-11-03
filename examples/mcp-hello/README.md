@@ -10,7 +10,7 @@ O objetivo aqui nao e fazer algo "util de verdade", e sim mostrar a **estrutura*
 de um servidor MCP: como criar o servidor, como declarar tools e como a IA descobre
 quando usar cada uma (dica: e atraves da **docstring** de cada funcao).
 
-> Este exemplo acompanha o capitulo [20 - Criando seu primeiro MCP](../../content/20-criando-seu-primeiro-mcp.md).
+> Este exemplo acompanha o capítulo [24 - Criando seu primeiro MCP](../../content/24-criando-seu-primeiro-mcp.md).
 
 ---
 

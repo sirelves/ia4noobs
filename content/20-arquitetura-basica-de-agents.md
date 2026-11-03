@@ -1,6 +1,6 @@
-# 19 - Arquitetura básica de Agents
+# 20 - Arquitetura básica de Agents
 
-Já vimos as peças soltas: o [loop de um agent](16-o-que-e-um-agent.md), as [tools](17-o-que-e-uma-tool.md), as [skills](18-o-que-sao-skills.md). Agora vamos **juntar tudo** num único desenho e entender como um agent é montado por dentro — quem decide, quem lembra, quem executa e o que impede a coisa de rodar para sempre.
+Já vimos as peças soltas: o [loop de um agent](17-o-que-e-um-agent.md), as [tools](18-o-que-e-uma-tool.md), as [skills](19-o-que-sao-skills.md). Agora vamos **juntar tudo** num único desenho e entender como um agent é montado por dentro — quem decide, quem lembra, quem executa e o que impede a coisa de rodar para sempre.
 
 ## Os cinco componentes
 
@@ -14,7 +14,7 @@ Um agent é feito de cinco partes. Cada uma tem um nome e um papel bem definido 
 
 **3. Planejamento — quebrar o objetivo em passos.** "Reservar uma viagem" não é uma ação; são várias: buscar voos, comparar preços, escolher hotel, somar o total. O planejamento é o cérebro **decompondo** o objetivo grande em passos pequenos e executáveis. Às vezes isso é um passo explícito ("primeiro faça uma lista"), às vezes está diluído no raciocínio de cada volta.
 
-**4. Tools — as mãos.** São as capacidades de **agir** no mundo: buscar na web, ler um arquivo, chamar uma API, rodar uma conta. O cérebro decide, as mãos executam. Detalhamos isso no [capítulo 17](17-o-que-e-uma-tool.md).
+**4. Tools — as mãos.** São as capacidades de **agir** no mundo: buscar na web, ler um arquivo, chamar uma API, rodar uma conta. O cérebro decide, as mãos executam. Detalhamos isso no [capítulo 18](18-o-que-e-uma-tool.md).
 
 **5. Orquestrador / Loop — o motor.** É o ciclo **decidir → agir → observar → repetir**, com uma **condição de parada**. É ele que costura os quatro componentes acima e sabe quando encerrar. Sem condição de parada, não é um agent útil — é uma conta de luz.
 
@@ -124,7 +124,7 @@ Ou seja: **o agent é um loop de código que re-consulta o cérebro repetidament
 ## Limites honestos
 
 - **Mais partes, mais pontos de falha.** Memória longa, planejamento, cinco tools — cada peça pode quebrar. Um agent com muitas engrenagens é mais difícil de depurar que um script direto.
-- **Custo e latência.** Cada volta é uma chamada ao modelo. Um agent de 20 passos custa e demora muito mais que uma pergunta única. Isso pesa em escala — assunto do [capítulo 28](28-custos-e-escalabilidade.md).
+- **Custo e latência.** Cada volta é uma chamada ao modelo. Um agent de 20 passos custa e demora muito mais que uma pergunta única. Isso pesa em escala — assunto do [capítulo 29](29-custos-e-escalabilidade.md).
 - **Comece simples.** Não monte os cinco componentes de largada. Um cérebro + duas tools + um loop com teto já é um agent. Adicione memória longa quando o contexto realmente estourar, planejamento quando as tarefas ficarem longas. Componente só entra quando há um problema presente pedindo por ele.
 
 ## Exercício
@@ -141,6 +141,6 @@ Desenhe (em texto, como os diagramas acima) a arquitetura de um agent para uma t
 
 <div align="center">
 
-[« 18 - O que são Skills](18-o-que-sao-skills.md) — [Índice](../README.md#roadmap) — [20 - Multi-Agent Systems »](20-multi-agent-systems.md)
+[« 19 - O que são Skills](19-o-que-sao-skills.md) — [Índice](../README.md#roadmap) — [21 - Multi-Agent Systems »](21-multi-agent-systems.md)
 
 </div>

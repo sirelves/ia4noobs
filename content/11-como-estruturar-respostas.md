@@ -82,7 +82,7 @@ for tag in dados["tags"]:
     salvar_no_banco(tag)     # agora é só usar
 ```
 
-Sacou o pulo do gato? A IA deixou de ser um chat e virou uma **função** que recebe texto bagunçado e devolve dados limpos. É esse padrão que está por trás de aplicações reais de IA — voltaremos a ele no [capítulo 25](25-como-criar-aplicacoes-com-ia.md).
+Sacou o pulo do gato? A IA deixou de ser um chat e virou uma **função** que recebe texto bagunçado e devolve dados limpos. É esse padrão que está por trás de aplicações reais de IA — voltaremos a ele no [capítulo 26](26-como-criar-aplicacoes-com-ia.md).
 
 ## Como pedir estrutura e ela realmente vir
 

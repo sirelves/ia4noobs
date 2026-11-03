@@ -1,4 +1,4 @@
-# 22 - MCP Client e MCP Server
+# 23 - MCP Client e MCP Server
 
 No capítulo anterior vimos *para que serve* o MCP. Agora vamos abrir a caixa e ver **como os dois lados conversam** — porque, no fim, MCP é só isso: dois programas trocando mensagens combinadas. Quando você entender quem fala o quê, o resto do guia (criar seu próprio server, plugar num app) vira detalhe.
 
@@ -120,6 +120,6 @@ Essas mensagens JSON precisam de um "cano" para trafegar. Os dois mais comuns:
 
 <div align="center">
 
-[« 21 - O que é MCP](21-o-que-e-mcp.md) — [Índice](../README.md#roadmap) — [23 - Criando seu primeiro MCP »](23-criando-seu-primeiro-mcp.md)
+[« 22 - O que é MCP](22-o-que-e-mcp.md) — [Índice](../README.md#roadmap) — [24 - Criando seu primeiro MCP »](24-criando-seu-primeiro-mcp.md)
 
 </div>

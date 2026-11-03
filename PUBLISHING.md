@@ -8,7 +8,7 @@ Antes de abrir PR, valide a ideia no canal `#4noobs` do Discord da HE4RT, como i
 
 Do lado do IA4Noobs (feito):
 
-- [x] O guia está finalizado e revisado (7 módulos, 30 capítulos + glossário, 6 exemplos; revisão técnica concluída).
+- [x] O guia está finalizado e revisado (7 módulos, 31 capítulos + glossário, 6 exemplos; revisão técnica concluída).
 - [x] O README segue o template de roadmap do 4noobs.
 - [x] O conteúdo é original e não fere direitos autorais.
 - [x] Os links apontam para o repositório publicado (`https://github.com/sirelves/ia4noobs`).

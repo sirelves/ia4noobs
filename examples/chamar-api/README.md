@@ -8,7 +8,7 @@ a **API** é diferente: em vez de digitar num chat, é o seu **código** que
 conversa com o modelo. É assim que se constrói qualquer aplicação com IA.
 
 > Este exemplo acompanha os capítulos [05 - O que são Tokens](../../content/05-o-que-sao-tokens.md)
-> e [28 - Custos e Escalabilidade](../../content/28-custos-e-escalabilidade.md).
+> e [29 - Custos e Escalabilidade](../../content/29-custos-e-escalabilidade.md).
 
 ---
 

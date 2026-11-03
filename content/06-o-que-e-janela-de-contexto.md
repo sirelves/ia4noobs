@@ -83,7 +83,7 @@ O problema: se cada token olha para todos os outros, o custo **não cresce em li
 E isso liga direto no seu bolso. Como você viu no [capítulo 05 - Tokens](05-o-que-sao-tokens.md), você paga **por token** — e a conta inclui **todo** o contexto reenviado a cada mensagem. Contexto grande significa:
 
 - **Mais lento:** mais tokens para processar = resposta demora mais.
-- **Mais caro:** você paga pela janela inteira a cada chamada, não só pela sua última frase. Numa conversa longa, o histórico é reenviado repetidas vezes. Veremos essa conta a fundo no [capítulo 28 - Custos](28-custos-e-escalabilidade.md).
+- **Mais caro:** você paga pela janela inteira a cada chamada, não só pela sua última frase. Numa conversa longa, o histórico é reenviado repetidas vezes. Veremos essa conta a fundo no [capítulo 29 - Custos](29-custos-e-escalabilidade.md).
 
 ## Estratégias para não estourar (nem desperdiçar) a janela
 

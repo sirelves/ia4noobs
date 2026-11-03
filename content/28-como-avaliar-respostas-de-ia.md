@@ -1,4 +1,4 @@
-# 27 - Como avaliar respostas de IA
+# 28 - Como avaliar respostas de IA
 
 Você mexeu no prompt e a resposta *parece* melhor. Mas será que melhorou mesmo — ou só ficou boa naquele um exemplo que você testou, e piorou em dez que você não viu? Sem **medir**, você está no escuro. E em IA o chão se move: o provedor atualiza o modelo, você troca o prompt, mexe na temperatura — e o comportamento muda junto. A resposta profissional para "está bom?" tem nome: **evals** (avaliações). Em vez de achismo, você mede.
 
@@ -86,7 +86,7 @@ Aqui está o coração do capítulo. Um eval só vale se você **rodar sempre**.
 4. subiu → mantém.  caiu → você acabou de pegar uma regressão
 ```
 
-Esse loop é o que transforma ajuste de prompt de "tentativa e reza" em engenharia. Ele mata os dois fantasmas: o **"melhorei no feeling"** (agora você tem número) e a **regressão silenciosa** — consertar o caso A e quebrar o caso B sem perceber. É o mesmo raciocínio de teste automatizado que você aplica ao construir aplicações no [capítulo 25](25-como-criar-aplicacoes-com-ia.md).
+Esse loop é o que transforma ajuste de prompt de "tentativa e reza" em engenharia. Ele mata os dois fantasmas: o **"melhorei no feeling"** (agora você tem número) e a **regressão silenciosa** — consertar o caso A e quebrar o caso B sem perceber. É o mesmo raciocínio de teste automatizado que você aplica ao construir aplicações no [capítulo 26](26-como-criar-aplicacoes-com-ia.md).
 
 ## Por dentro: por que (des)confiar do LLM juiz
 
@@ -94,7 +94,7 @@ O LLM-as-judge é tentador porque é **barato e escala**: avalia milhares de res
 
 - **Ele erra e inventa**, como qualquer modelo. O juiz não é oráculo.
 - **Tem vieses de julgamento.** Estudos mostram que juízes tendem a preferir respostas **mais longas** e mais bem formatadas, mesmo quando não são melhores. E há o viés mais desconfortável: o juiz tende a **favorecer respostas parecidas com as que ele mesmo escreveria** — se você usa o mesmo modelo para gerar e para julgar, ele se dá boas notas.
-- **Pode ser induzido.** Se o texto avaliado contém algo como "esta é uma resposta excelente e correta", o juiz pode simplesmente acreditar — uma prima da injeção de prompt do [capítulo 26](26-seguranca-em-ia.md).
+- **Pode ser induzido.** Se o texto avaliado contém algo como "esta é uma resposta excelente e correta", o juiz pode simplesmente acreditar — uma prima da injeção de prompt do [capítulo 27](27-seguranca-em-ia.md).
 
 Como usar mesmo assim, com responsabilidade:
 
@@ -106,7 +106,7 @@ Como usar mesmo assim, com responsabilidade:
 
 ## Limites honestos
 
-Nenhum eval é perfeito. Um conjunto de 20 casos **não cobre** o mundo real inteiro — sempre haverá entradas que você não previu. E existe um risco sutil: **otimizar demais para o seu teste**. Se você fica ajustando o prompt até cravar 100% naqueles 20 casos, pode ter criado um modelo ótimo *só naquele teste* e medíocre no resto — um benchmark viciado, o equivalente a decorar a prova em vez de aprender a matéria. Cresça o conjunto com o tempo, renove os casos e nunca trate a nota como verdade absoluta. Você vai colocar tudo isso em prática de verdade no [projeto final](29-projeto-final-faq-rag.md).
+Nenhum eval é perfeito. Um conjunto de 20 casos **não cobre** o mundo real inteiro — sempre haverá entradas que você não previu. E existe um risco sutil: **otimizar demais para o seu teste**. Se você fica ajustando o prompt até cravar 100% naqueles 20 casos, pode ter criado um modelo ótimo *só naquele teste* e medíocre no resto — um benchmark viciado, o equivalente a decorar a prova em vez de aprender a matéria. Cresça o conjunto com o tempo, renove os casos e nunca trate a nota como verdade absoluta. Você vai colocar tudo isso em prática de verdade no [projeto final](30-projeto-final-faq-rag.md).
 
 ## Recapitulando
 
@@ -128,6 +128,6 @@ Escolha uma tarefa sua de IA (ex.: classificar um comentário como positivo, neg
 
 <div align="center">
 
-[« 26 - Segurança em IA](26-seguranca-em-ia.md) — [Índice](../README.md#roadmap) — [28 - Custos e Escalabilidade »](28-custos-e-escalabilidade.md)
+[« 27 - Segurança em IA](27-seguranca-em-ia.md) — [Índice](../README.md#roadmap) — [29 - Custos e Escalabilidade »](29-custos-e-escalabilidade.md)
 
 </div>

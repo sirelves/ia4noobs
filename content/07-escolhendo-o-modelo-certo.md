@@ -66,7 +66,7 @@ O resultado vira uma tabelinha assim (**números ilustrativos** — os seus vão
 | Médio | 19/20 (95%) | US$ 0,03 | 1,5 s |
 | Topo de linha | 20/20 (100%) | US$ 0,20 | 4 s |
 
-Olhando *esta* tabela (e não o ranking global), a decisão fica óbvia pro seu caso. Como julgar "acertou ou não" de forma justa é assunto do [capítulo 27 - Como avaliar respostas de IA](27-como-avaliar-respostas-de-ia.md).
+Olhando *esta* tabela (e não o ranking global), a decisão fica óbvia pro seu caso. Como julgar "acertou ou não" de forma justa é assunto do [capítulo 28 - Como avaliar respostas de IA](28-como-avaliar-respostas-de-ia.md).
 
 ## A conta de custo × qualidade (e o roteamento)
 
@@ -100,7 +100,7 @@ A primeira grande bifurcação de infraestrutura:
 | Privacidade | Dados saem para o fornecedor | Dados **não saem** da sua infra |
 | Facilidade | Muito fácil de começar | Exige setup e hardware |
 
-Vamos rodar um modelo aberto na prática no [capítulo 24 - Rodando modelos localmente](24-rodando-modelos-localmente.md).
+Vamos rodar um modelo aberto na prática no [capítulo 25 - Rodando modelos localmente](25-rodando-modelos-localmente.md).
 
 ## Tamanho: nem tudo precisa do topo de linha
 

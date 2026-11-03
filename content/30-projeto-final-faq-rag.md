@@ -1,4 +1,4 @@
-# 29 - Projeto final: um assistente de FAQ com RAG
+# 30 - Projeto final: um assistente de FAQ com RAG
 
 Chegou a hora de juntar tudo. Este capítulo não ensina um conceito novo — ele te guia a **construir um projetinho de ponta a ponta** usando o que você aprendeu: prompts, embeddings, RAG, escolha de modelo, custo e avaliação.
 
@@ -58,7 +58,7 @@ Buscar por *significado*, e não por palavra exata, é o pulo do gato: a pergunt
 
 ### 5. Monte o prompt com grounding
 
-Junte os trechos recuperados e a pergunta num prompt que **amarra o modelo à fonte** (*grounding*) e o proíbe de inventar ([cap. 26](26-seguranca-em-ia.md)):
+Junte os trechos recuperados e a pergunta num prompt que **amarra o modelo à fonte** (*grounding*) e o proíbe de inventar ([cap. 27](27-seguranca-em-ia.md)):
 
 ```text
 Responda a pergunta usando APENAS os trechos abaixo.
@@ -81,7 +81,7 @@ Faça a resposta indicar **de qual documento/trecho** ela veio (basta guardar o 
 
 ## Como saber se ficou bom
 
-"Parece que funciona" não é medida. Antes de sair ajustando, monte um **mini-eval** ([cap. 27](27-como-avaliar-respostas-de-ia.md)): um conjunto fixo de **5 a 10 perguntas** com a resposta que você espera. Exemplo:
+"Parece que funciona" não é medida. Antes de sair ajustando, monte um **mini-eval** ([cap. 28](28-como-avaliar-respostas-de-ia.md)): um conjunto fixo de **5 a 10 perguntas** com a resposta que você espera. Exemplo:
 
 ```text
 Pergunta                                  | Resposta esperada
@@ -92,6 +92,8 @@ Vocês entregam no exterior?               | (NÃO está nos docs → deve admit
 ```
 
 Repare na terceira linha: **inclua de propósito perguntas cuja resposta NÃO está nos documentos**. O comportamento certo ali é o assistente dizer "não encontrei isso nos documentos" — e não inventar. Um RAG que acerta as fáceis mas *alucina* nas que não sabe é pior que inútil: é enganoso.
+
+Dica de ouro: quando uma resposta sair errada, **olhe primeiro os trechos que a busca trouxe**. Se o trecho certo nem veio, o problema é a recuperação (chunk, `k`, tipo de busca); se veio e a resposta errou mesmo assim, o problema é a geração (prompt, modelo). Imprimir os trechos recuperados junto da resposta poupa horas de chute. Mais sobre isso em [RAG na prática (cap. 16)](16-rag-na-pratica.md#primeiro-meça-o-rag-tem-duas-metades).
 
 Rode as perguntas, conte quantas ele acertou, anote. Agora você tem um **número**. Mudou o tamanho do chunk, o `k` ou o prompt? Rode de novo e compare. Isso transforma "achismo" em "essa mudança subiu de 6 para 8 acertos".
 
@@ -109,8 +111,8 @@ Bateu os quatro? Você tem um assistente de FAQ com RAG de verdade — feio, tal
 ## Evoluções (quando o básico funcionar)
 
 - Trocar a lista na memória por um **banco vetorial** de verdade ([cap. 15](15-o-que-e-banco-vetorial.md)) — necessário quando os documentos crescem.
-- Transformar em um **agent** que decide quando buscar e quando responder direto ([cap. 16](16-o-que-e-um-agent.md)).
-- Expor os documentos via **MCP** para outra IA usar como ferramenta ([cap. 21](21-o-que-e-mcp.md)).
+- Transformar em um **agent** que decide quando buscar e quando responder direto ([cap. 17](17-o-que-e-um-agent.md)).
+- Expor os documentos via **MCP** para outra IA usar como ferramenta ([cap. 22](22-o-que-e-mcp.md)).
 - Colocar uma interface simples (web ou chat) na frente.
 
 ## Seja honesto: os limites
@@ -130,6 +132,6 @@ Bateu os quatro? Você tem um assistente de FAQ com RAG de verdade — feio, tal
 
 <div align="center">
 
-[« 28 - Custos e Escalabilidade](28-custos-e-escalabilidade.md) — [Índice](../README.md#roadmap) — [Glossário »](glossario.md)
+[« 29 - Custos e Escalabilidade](29-custos-e-escalabilidade.md) — [Índice](../README.md#roadmap) — [Glossário »](glossario.md)
 
 </div>
