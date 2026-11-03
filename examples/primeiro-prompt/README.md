@@ -2,7 +2,7 @@
 
 O mesmo pedido, escrito de um jeito melhor, gera respostas **muito** melhores. A IA não adivinha o que está na sua cabeça: quanto mais clara for a sua instrução, mais útil será a resposta.
 
-Abaixo estão pares de exemplo. Em cada um você vê um **prompt ruim** (vago) e um **prompt bom** (claro). A ideia não é só ler — é **testar**! Copie cada par e cole numa ferramenta de IA como [ChatGPT](https://chat.openai.com), [Claude](https://claude.ai) ou [Gemini](https://gemini.google.com) e compare as duas respostas. A diferença salta aos olhos.
+Abaixo estão pares de exemplo. Em cada um você vê um **prompt ruim** (vago) e um **prompt bom** (claro). A ideia não é só ler — é **testar**! Copie cada par e cole numa ferramenta de IA como [ChatGPT](https://chatgpt.com), [Claude](https://claude.ai) ou [Gemini](https://gemini.google.com) e compare as duas respostas. A diferença salta aos olhos.
 
 ---
 
@@ -172,4 +172,4 @@ Compare a resposta do prompt ruim com a do seu prompt melhorado. Sentiu a difere
 
 ---
 
-Veja o capítulo [06 - O que é Prompt Engineering](../../content/06-o-que-e-prompt-engineering.md) para a teoria.
+Veja o capítulo [08 - O que é Prompt Engineering](../../content/08-o-que-e-prompt-engineering.md) para a teoria.

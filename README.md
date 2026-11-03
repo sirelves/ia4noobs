@@ -2,7 +2,10 @@
 
 <p align="center">
   <a href="https://github.com/he4rt/4noobs" target="_blank">
-    <img src="https://raw.githubusercontent.com/he4rt/4noobs/master/.github/header_4noobs.svg" alt="4noobs">
+    <picture>
+      <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/he4rt/4noobs/master/Templates/capas/heartdevs-light.svg">
+      <img src="https://raw.githubusercontent.com/he4rt/4noobs/master/Templates/capas/heartdevs-dark.svg" width="100%" alt="4noobs">
+    </picture>
   </a>
 </p>
 
@@ -144,7 +147,7 @@ IA se aprende **conversando com ela**. Tenha uma janela de chat aberta enquanto 
 Terminou o guia e quer ir mais fundo? Alguns materiais gratuitos e de qualidade:
 
 - **[CS50's Introduction to Artificial Intelligence with Python](https://cs50.harvard.edu/ai)** (Harvard) — curso gratuito e clássico sobre os fundamentos da IA (busca, otimização, machine learning) com projetos em Python. É **mais técnico e matemático** que este guia, então é um ótimo próximo passo depois daqui.
-- **[Documentação da Anthropic](https://docs.anthropic.com)** e **[da OpenAI](https://platform.openai.com/docs)** — referências oficiais para construir aplicações, com guias de prompt, agents e boas práticas.
+- **[Documentação da Anthropic](https://platform.claude.com/docs)** e **[da OpenAI](https://developers.openai.com/api/docs)** — referências oficiais para construir aplicações, com guias de prompt, agents e boas práticas.
 - **[Índice do 4noobs](https://github.com/he4rt/4noobs)** — guias de várias linguagens e tecnologias da comunidade HE4RT para fortalecer sua base.
 
 ## Como Contribuir
@@ -172,6 +175,6 @@ Quando o guia estiver revisado e publicado no GitHub, use o arquivo [PUBLISHING.
 
 <p align="center">
   <a href="https://github.com/he4rt/4noobs" target="_blank">
-    <img src="https://raw.githubusercontent.com/he4rt/4noobs/master/.github/footer_4noobs.svg" width="380" alt="4noobs footer">
+    <img src="https://raw.githubusercontent.com/he4rt/4noobs/master/.github/img/footer_4noobs.svg" width="380" alt="4noobs footer">
   </a>
 </p>
